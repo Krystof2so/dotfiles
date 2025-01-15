@@ -1,0 +1,13 @@
+# Désactiver le style synthétique :
+font-size = 14
+
+
+# LE THEME ET LES COULEURS
+theme = "/usr/share/ghostty/themes/nord"
+background-opacity = 0.8
+unfocused-split-fill = "#4c566a"
+
+# RACCOURCIS CLAVIER
+keybind = ctrl+shift+d=clear_screen
+keybind = ctrl+shift+left=goto_split:left
+keybind = ctrl+shift+right=goto_split:right

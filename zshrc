@@ -189,6 +189,7 @@ aptiup() {
 # Alias
 alias apti='su -c "aptitude"'
 alias cleanapt='su -c "aptitude autoclean; aptitude clean"'
+alias ghostty='/usr/bin/ghostty'
 
 # Gestion de l'extinction du PC
 # -----------------------------
@@ -202,3 +203,5 @@ alias pyt13='python3.13'
 alias pyt12='python3.12'
 alias pyt='python3'
 
+
+source /home/krystof/.config/broot/launcher/bash/br
