@@ -102,13 +102,19 @@ get_git_status() {
 # Prompt personnalisé 
 # -------------------
 custom_prompt() {
+    # Vérification si environnement virtuel Python :
+    if [[ -n "$VIRTUAL_ENV" ]]; then
+        local venv_name="%F{#b48ead}($(basename $VIRTUAL_ENV))%f "
+    else
+        local venv_name=""
+    fi
     # Les diverses parties du prompt avec les couleurs et le format souhaités :
     local day="$(date +'%a %d %b %Y' | sed 's/^\(.\)/\U\1/')"
     local hour="%F{#a3be8c}  %F{#81a1c1}$(date +'%H:%M')"
     local first_part="%K{#000000}%F{#a3be8c}┌──%F{#5e81ac} ${day} ${hour} %k%f%K{#282828}%F{#000000}◗%f"
     local second_part="🐧%F{#5e81ac}%~/% %K{#3c3c3c}%F{#282828}◗%f"
     local third_part="... $(get_git_status) %k%F{#3c3c3c}◗%f"
-    local second_line="%F{#a3be8c}└── %F{#81a1c1}%n %F{#d08770}🖉  "
+    local second_line="%F{#a3be8c}└── ${venv_name}%F{#81a1c1}%n %F{#d08770}🖉  "
     #local git_info=$(get_git_status)
     PROMPT="${first_part} ${second_part} ${third_part}
 ${second_line}%f"

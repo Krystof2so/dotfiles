@@ -1,13 +1,34 @@
-# Désactiver le style synthétique :
+# POLICE
+font-family = FiraCode Nerd Font Mono
 font-size = 14
-
 
 # LE THEME ET LES COULEURS
 theme = "/usr/share/ghostty/themes/nord"
+window-theme = ghostty
 background-opacity = 0.8
 unfocused-split-fill = "#4c566a"
 
+# INTERFACE
+window-new-tab-position = end
+
+# CARACTERISTIQUES
+confirm-close-surface = always
+link-url = true
+
 # RACCOURCIS CLAVIER
-keybind = ctrl+shift+d=clear_screen
+keybind = ctrl+shift+alt+c=clear_screen
+keybind = ctrl+f11=toggle_fullscreen
+# Création d'un nouveau buffer :
+keybind = ctrl+shift+t=new_tab
+# Création d'une nouvelle fenêtre :
+keybind = ctrl+shift+enter=new_window
+# Création de nouvelles fenêtres (split) :
+keybind = ctrl+shift+e=new_split:left
+#keybind = ctrl+shift+s=new_split:bottom
+#keybind = ctrl+shift+n=new_split:top
+keybind = ctrl+shift+o=new_split:right
+# Déplacements entre les splits :
 keybind = ctrl+shift+left=goto_split:left
+keybind = ctrl+shift+down=goto_split:bottom
+keybind = ctrl+shift+up=goto_split:top
 keybind = ctrl+shift+right=goto_split:right
