@@ -7,6 +7,8 @@ theme = "/usr/share/ghostty/themes/nord"
 window-theme = ghostty
 background-opacity = 0.8
 unfocused-split-fill = "#4c566a"
+cursor-color = "#8fbcbb"
+cursor-style = block
 
 # INTERFACE
 window-new-tab-position = end
