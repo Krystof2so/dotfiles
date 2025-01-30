@@ -11,6 +11,8 @@ cursor-color = "#8fbcbb"
 cursor-style = block
 
 # INTERFACE
+window-height = 35
+window-width = 100
 window-new-tab-position = end
 
 # CARACTERISTIQUES
@@ -20,6 +22,9 @@ link-url = true
 # RACCOURCIS CLAVIER
 keybind = ctrl+shift+alt+c=clear_screen
 keybind = ctrl+f11=toggle_fullscreen
+# Augmentation ou diminution taille police (+ ou + pavé numérique) :
+keybind = all:ctrl+super+kp_add=increase_font_size:1
+keybind = all:ctrl+super+kp_subtract=decrease_font_size:1
 # Création d'un nouveau buffer :
 keybind = ctrl+shift+t=new_tab
 # Création d'une nouvelle fenêtre :
