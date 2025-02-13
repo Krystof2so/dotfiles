@@ -6,7 +6,6 @@ Projet en cours...
 
 - **zshrc** : fichier de configuration du shell [zsh](https://zsh.sourceforge.io/)
 - **kitty.conf** : fichier de configuration de l'émulateur de terminal [kitty](https://sw.kovidgoyal.net/kitty/)... en construction
-- **ghostty** : fichier de configuration de l'émulateur de terminal [ghostty](https://ghostty.org/)... en construction
 
 ## Caractéritiques
 
@@ -20,8 +19,4 @@ Projet en cours...
 ### `kitty.conf` 
 ... en construction
 
-### `ghostty`
-- Page de [téléchargement](https://ghostty.org/docs/install/binary#linux-(official)) pour **Linux**
-- Page [GitHub](https://github.com/ghostty-org/ghostty)
-- Aucune configuration n'est requise pour débuter avec **ghostty**.
 
