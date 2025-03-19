@@ -21,6 +21,7 @@ Les raccourcis clavier qui suivent ne fonctionnent que quand le terminal est en 
 - Se rendre à l'onglet précédent : **[Ctrl] + [Shift] + [Flèche de gauche]**
 - Déplacer l'onglet à la position précédente : **[Ctrl] + [Shift] + [,]**
 - Renommer le titre de l'onglet : **[Ctrl] + [Shift] + [Alt] + [T]**, saisir alors le noueau titre
+- Fermer l'onget : **[Ctrl] + [Shift] + [Q]**
 
 ## Les fenêtres (*windows*)
 
