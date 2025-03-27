@@ -168,6 +168,7 @@ alias grep='grep --color=auto'
 # - aptitude         #
 # - extinction du PC #
 # - Python           #
+# - kittens          #
 ######################
 
 # zinit
@@ -208,6 +209,10 @@ alias reboot='systemctl reboot'
 alias pyt13='python3.13'
 alias pyt12='python3.12'
 alias pyt='python3'
+
+# kittens
+# -------
+alias icat='kitten icat '
 
 
 # Created by `pipx` on 2025-02-05 20:45:12
