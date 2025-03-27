@@ -179,7 +179,7 @@ alias zinitup='zinit_update'
 # Fonction de mise à jour des dépôts avec 'aptitude' :
 aptiup() {
     # Mets à jour la liste des paquets en demandant le mot de passe de l'utilisateur :
-    su -c "aptitude update"
+    sudo aptitude update
     # Compte les paquets à mettre à jour et les nouveaux paquets :
     updates=$(aptitude search "~U" | wc -l)
     new_packages=$(aptitude search "~N" | wc -l)
@@ -187,16 +187,15 @@ aptiup() {
     # Vérifie et affiche un message en conséquence
     if (( updates > 0 || new_packages > 0 )); then
         echo "\033[33mPaquets disponibles pour mise à jour : $updates à mettre à jour, $new_packages nouveaux.\033[0m"
-        su -c "aptitude"  # Ouverture d'aptitude
+        sudo aptitude  # Ouverture d'aptitude
     else
         echo "\033[32mAucun paquet à mettre à jour et aucun nouveau paquet disponible.\033[0m"
     fi
 }
 # Alias
-alias apti='su -c "aptitude"'
+alias apti='sudo aptitude'
 alias cleanapt='su -c "aptitude autoclean; aptitude clean"'
-alias ghostty='/usr/bin/ghostty'
-alias eol='~/.local/bin/eol'
+alias dotfiles='cd ~/dotfiles/ && nvim'
 
 # Gestion de l'extinction du PC
 # -----------------------------
