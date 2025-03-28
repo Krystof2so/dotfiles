@@ -196,7 +196,11 @@ aptiup() {
 # Alias
 alias apti='sudo aptitude'
 alias cleanapt='su -c "aptitude autoclean; aptitude clean"'
+
+# Divers
+# ------
 alias dotfiles='cd ~/dotfiles/ && nvim'
+alias lua="lua5.4"
 
 # Gestion de l'extinction du PC
 # -----------------------------
