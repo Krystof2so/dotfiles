@@ -55,6 +55,7 @@ Les raccourcis clavier qui suivent ne fonctionnent que quand le terminal est en 
 - (Re)charger `kitty.conf` : **[Ctrl] + [Shift] + [F5]**
 - Ouvre au copie le fichier de débogage de **kitty** : **[Ctrl] + [Shift] + [F6]**
 - Ouvre un *shell* **kitty** dans une nouvelle fenêtre : **[Ctrl] + [Shift] + [Esc]**
+- Mettre en évidence les urls présentent à l'écran : **[Ctrl] + [Shift] + [e]**, puis sélectionner l'url par le nombre correspondant pour l'ouvrir dans un navigateur.
 
 
 
