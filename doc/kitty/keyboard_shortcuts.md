@@ -25,7 +25,7 @@ Les raccourcis clavier qui suivent ne fonctionnent que quand le terminal est en 
 
 ## Les fenêtres (*windows*)
 
-- Nouvelle fenêtre : **[Ctrl] + [Shift] + [Enter]**
+- Nouvelle fenêtre (ouverte au niveau du répertoire courant) : **[Ctrl] + [Shift] + [Enter]**
 - Nouvelle fenêtre au niveau de l'OS : **[Ctrl] + [Shift] + [N]**
 - Fermeture de la fenêtre : **[Ctrl] + [Shift] + [W]**
 - Redimensionnement de la fenêtre : **[Shift] + [Flèches directionnelles]**
