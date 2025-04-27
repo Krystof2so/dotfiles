@@ -201,6 +201,7 @@ alias cleanapt='su -c "aptitude autoclean; aptitude clean"'
 # ------
 alias dotfiles='cd ~/dotfiles/ && nvim'
 alias lua="lua5.4"
+alias lsa="ls -la"
 
 # Gestion de l'extinction du PC
 # -----------------------------
