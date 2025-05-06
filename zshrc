@@ -220,5 +220,8 @@ alias pyt='python3'
 alias icat='kitten icat '
 
 
-# Created by `pipx` on 2025-02-05 20:45:12
+# Pyenv - Created by `pipx` on 2025-02-05 20:45:12
 export PATH="$PATH:/home/krystof/.local/bin"
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
