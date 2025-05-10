@@ -137,6 +137,7 @@ setopt NO_BEEP  # Supprime les sons (beep des erreurs de frappe, etc.)
 
 # Autocomplétion 
 # --------------
+fpath+=~/dotfiles/zsh_functions  # Autocomplétion pour Poetry
 autoload -Uz compinit && compinit  # Active l'autocomplétion de ZSH
 setopt AUTO_LIST              # Liste les options de complétion après une tabulation
 setopt COMPLETE_IN_WORD       # Complète même si le curseur est au milieu du mot
