@@ -203,6 +203,7 @@ alias cleanapt='su -c "aptitude autoclean; aptitude clean"'
 alias dotfiles='cd ~/dotfiles/ && nvim'
 alias lua="lua5.4"
 alias lsa="ls -la"
+alias pyenv-update='cd ~/.pyenv && git pull && cd -'
 
 # Gestion de l'extinction du PC
 # -----------------------------
@@ -212,8 +213,6 @@ alias reboot='systemctl reboot'
 
 # Alias pour Python
 # -----------------
-alias pyt13='python3.13'
-alias pyt12='python3.12'
 alias pyt='python3'
 
 # kittens
@@ -226,6 +225,10 @@ export PATH="$PATH:/home/krystof/.local/bin"
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - zsh)"
+
+# Autocompléion pour 'poetry'
+fpath+=~/.zfunc
+autoload -Uz compinit && compinit
 
 # Autocmplétion pour 'uv' et 'uvx'
 eval "$(uv generate-shell-completion zsh)"
