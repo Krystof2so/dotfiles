@@ -196,7 +196,10 @@ aptiup() {
 }
 
 # Chargement des fonctions personnalisées
+source "$HOME/dotfiles/zsh_functions/path.zsh"
 source "$HOME/dotfiles/zsh_functions/devtools.zsh"
+source "$HOME/dotfiles/zsh_functions/pyenv.zsh"
+
 
 # Alias
 alias apti='sudo aptitude'
@@ -220,14 +223,6 @@ alias pyt='python3'
 # kittens
 # -------
 alias icat='kitten icat '
-
-
-# Pyenv 
-# -----
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
 
 # Poetry
 # ------
