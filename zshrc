@@ -194,6 +194,10 @@ aptiup() {
         echo "\033[32mAucun paquet à mettre à jour et aucun nouveau paquet disponible.\033[0m"
     fi
 }
+
+# Chargement des fonctions personnalisées
+source "$HOME/dotfiles/zsh_functions/devtools.zsh"
+
 # Alias
 alias apti='sudo aptitude'
 alias cleanapt='su -c "aptitude autoclean; aptitude clean"'
@@ -203,13 +207,11 @@ alias cleanapt='su -c "aptitude autoclean; aptitude clean"'
 alias dotfiles='cd ~/dotfiles/ && nvim'
 alias lua="lua5.4"
 alias lsa="ls -la"
-alias pyenv-update='cd ~/.pyenv && git pull && cd -'
 
 # Gestion de l'extinction du PC
 # -----------------------------
 alias adios='systemctl poweroff'
 alias reboot='systemctl reboot'
-
 
 # Alias pour Python
 # -----------------
@@ -220,13 +222,16 @@ alias pyt='python3'
 alias icat='kitten icat '
 
 
-# Pyenv - Created by `pipx` on 2025-02-05 20:45:12
-export PATH="$PATH:/home/krystof/.local/bin"
+# Pyenv 
+# -----
 export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - zsh)"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
-# Autocompléion pour 'poetry'
+# Poetry
+# ------
+export PATH="$HOME/.local/bin:$PATH"
 fpath+=~/.zfunc
 autoload -Uz compinit && compinit
 
