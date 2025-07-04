@@ -2,5 +2,5 @@
 zsh_functions/poetry
 
 # Dossier de documentation local non versionné
-docs/
+doc/
 
