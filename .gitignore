@@ -1,3 +1,6 @@
-poetry
-doc/
+# Fichier temporaire non utilisé dans Git
+zsh_functions/poetry
+
+# Dossier de documentation local non versionné
+docs/
 
