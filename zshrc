@@ -97,6 +97,9 @@ zinit ice depth=1; zinit light zsh-users/zsh-completions
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#8c8c8c'
 ZSH_HIGHLIGHT_STYLES[path]='fg=#ebcb8b'
 
+# Intégration shell pour WezTerm
+./wezterm/wezterm.sh
+
 #########################
 # SECTION : PROMPT ZSH  #
 #########################
