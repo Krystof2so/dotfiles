@@ -2,22 +2,22 @@
 -- # Configuration personnalisée de WezTerm #
 -- ##########################################
 -- Import de l'API WezTerm (pour accéder aux fonctions et constantes de WezTerm) :
-local wezterm = require("wezterm")
+local wezterm = require "wezterm"
 -- Création d'une table qui contiendra les options de configuration.
 -- 'config_builder' : accès à l'autocomplétion.
 local config = wezterm.config_builder()
 -- Charger les raccourcis clavier
-config.keys = require("keybindings")
+config.keys = require "keybindings"
 
 -- ####################
 -- # Gestion du thème #
 -- ####################
 -- Enregistre l'événement "toggle-theme"
-require("themes.toggle_themes")
+require "themes.toggle_themes"
 -- Déclarer le thème perso comme un color_scheme
-local nord_theme = require("themes.theme_nord")
+local nord_theme = require "themes.theme_nord"
 config.color_schemes = {
-	[nord_theme.name] = nord_theme.colors,
+  [nord_theme.name] = nord_theme.colors,
 }
 -- Appliquer ce thème par défaut
 config.color_scheme = nord_theme.name
