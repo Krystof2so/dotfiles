@@ -22,9 +22,11 @@ wezterm.on("toggle-theme", function(window)
   -- Si thème clair actif, revenir au thème personnalisé de base (appliqué au démarrage) :
   if overrides.color_scheme == "Atelierseaside (light) (terminal.sexy)" then
     overrides.color_scheme = nil -- Suppression de la surcharge pour appliquer le thème personnalisé
+    overrides.window_background_opacity = 0.65 -- Transparence pour le thème sombre
   else
     -- Sinon, on applique le thème clair intégré :
     overrides.color_scheme = "Atelierseaside (light) (terminal.sexy)"
+    overrides.window_background_opacity = 0.85 -- Transparence pour le thème clair
   end
   -- Appliquer les surcharges pour la fenêtre actuelle.
   -- Pour une nouvelle fenêtre, cela reste le thème par défaut.

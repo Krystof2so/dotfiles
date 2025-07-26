@@ -11,8 +11,10 @@ local nord_theme = {
   selection_bg = nord.nord3, -- Couleur de l'arrière plan de la selection
   scrollbar_thumb = nord.nord10, -- Couleur de la barre de défilement
   split = nord.nord14, -- Couleur de séparation entre les volets
-
-  ansi = {
+  -- Définition des 16 couleurs de base :
+  ansi = { -- Les 8 couleurs de base
+    -- Pour tester ces couleurs, lancer la commande shell suivante dans le terminal :
+    -- "for i in {0..15}; do printf "\033[48;5;${i}m %3d " $i; done; echo"
     nord.nord0,
     nord.nord11,
     nord.nord14,
@@ -22,7 +24,7 @@ local nord_theme = {
     nord.nord8,
     nord.nord5,
   },
-  brights = {
+  brights = { -- Les 8 couleurs "vives"
     nord.nord3,
     nord.nord11,
     nord.nord14,

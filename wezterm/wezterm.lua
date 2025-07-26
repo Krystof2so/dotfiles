@@ -25,6 +25,18 @@ config.color_scheme = nord_theme.name
 -- ##################
 -- # Configurations #
 -- ##################
+
+-- Personnalisation de la barre d'onglets :
+config.window_frame = {
+  font_size = 15.0,
+}
+
+-- Aspect du volet inactif :
+config.inactive_pane_hsb = {
+  saturation = 0.5,
+  brightness = 0.4,
+}
+
 -- Définition de la taille initiale des fenêtres du terminal à l'ouverture :
 config.initial_cols = 120 -- 120 caractères de largeur
 config.initial_rows = 28 -- 28 lignes de heuteur
