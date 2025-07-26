@@ -124,10 +124,10 @@ custom_prompt() {
   local hour="%F{#a3be8c}  %F{#81a1c1}$(date +'%H:%M')"
   local venv_name=""
   [[ -n "$VIRTUAL_ENV" ]] && venv_name="%F{#b48ead}($(basename $VIRTUAL_ENV))%f "
-  local first_part="%K{#000000}%F{#a3be8c}┌──%F{#5e81ac} ${day} ${hour} %k%f%K{#282828}%F{#000000}◗%f"
-  local second_part="🐧%F{#5e81ac}%~/% %K{#3c3c3c}%F{#282828}◗%f"
-  local third_part="... $(get_git_status) %k%F{#3c3c3c}◗%f"
-  local second_line="%K{#000000}%F{#a3be8c}└── ${venv_name}%F{#81a1c1}%n %F{#d08770}🖉 %k "
+  local first_part="%F{#a3be8c}┌──%F{#5e81ac} ${day} ${hour} %f%F{#b48ead}>%f"
+  local second_part="🐧%F{#5e81ac}%~/% %F{#b48ead} >%f"
+  local third_part="... $(get_git_status) %F{#b48ead}>%f"
+  local second_line="%F{#a3be8c}└── ${venv_name}%F{#81a1c1}%n %F{#d08770}🖉  "
   PROMPT="${first_part} ${second_part} ${third_part}
 ${second_line}%f"
 }
