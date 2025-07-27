@@ -8,6 +8,8 @@ local wezterm = require "wezterm"
 local config = wezterm.config_builder()
 -- Charger les raccourcis clavier
 config.keys = require "keybindings"
+-- Charger la configuration de l'environnement
+local env = require "environment"
 
 -- ####################
 -- # Gestion du thème #
@@ -25,6 +27,18 @@ config.color_scheme = nord_theme.name
 -- ##################
 -- # Configurations #
 -- ##################
+
+-- Programme shell utilisé par défaut
+config.default_prog = env.shell
+
+-- Variables d'environnement passées au shell
+config.set_environment_variables = {
+  LANG = env.locale,
+  EDITOR = env.editor,
+  ZDOTDIR = env.zsh_config_dir,
+  WEZTERM_CONFIG_DIR = env.wezterm_config_dir,
+  NVIM_CONFIG_DIR = env.nvim_config_dir,
+}
 
 -- Personnalisation de la barre d'onglets :
 config.window_frame = {
@@ -50,6 +64,18 @@ config.enable_scroll_bar = true -- Active la scroolbar
 
 -- Supprime temporairement le style du texte, pour des résultats plus lisibles en mode QuickSelect
 config.quick_select_remove_styling = true
+
+-- Démarrage de Wezterm en plein écran
+wezterm.on("gui-startup", function(cmd)
+  local _, _, window = wezterm.mux.spawn_window(cmd or {})
+  local gui_win = window:gui_window() -- Fenêtre GUI
+  local overrides = gui_win:get_config_overrides() or {}
+  -- Active la transparence à 0.65 dès le démarrage
+  overrides.window_background_opacity = 0.65
+  gui_win:set_config_overrides(overrides)
+  -- Plein écran
+  window:gui_window():toggle_fullscreen()
+end)
 
 -- Obligatoire : retourne l'objet de configuration pour que WezTerm puisse l'appliquer :
 return config
