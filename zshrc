@@ -12,6 +12,9 @@ setopt HIST_SAVE_NO_DUPS
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE
 
+export LANG=fr_FR.UTF-8
+export LC_TIME=fr_FR.UTF-8
+
 export PATH="$HOME/.local/bin:$PATH"
 CDPATH=.:~:/path/to/other/directory
 
@@ -159,7 +162,7 @@ aptiup() {
 
 # Divers
 alias dotfiles='cd ~/dotfiles && nvim'
-alias lua='lua5.4'
+alias lua='lua5.5'
 alias lsa='ls -la'
 alias adios='systemctl poweroff'
 alias reboot='systemctl reboot'
@@ -170,3 +173,5 @@ alias icat='kitten icat '
 eval "$(uv generate-shell-completion zsh)"
 eval "$(uvx --generate-shell-completion zsh)"
 
+# npm
+export PATH="$HOME/.npm-global/bin:$PATH"
