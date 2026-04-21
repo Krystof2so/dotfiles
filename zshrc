@@ -166,8 +166,7 @@ alias lua='lua5.5'
 alias lsa='eza --icons -la --git --group-directories-first --color-scale --header --total-size --binary --smart-group --blocksize --git-repos-no-status --time-style=+%Y-%m-%d-%H:%M'
 alias adios='systemctl poweroff'
 alias reboot='systemctl reboot'
-alias pyt='python3'
-alias icat='kitten icat '
+alias pyt='python3.14'
 
 # Complétions UV
 eval "$(uv generate-shell-completion zsh)"
