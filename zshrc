@@ -139,20 +139,20 @@ precmd() { custom_prompt }
 # Outils CLI 
 #----------- 
 #
-# ls & eza
-alias lsa='eza --icons -la --git --group-directories-first --color-scale --header --total-size --binary --smart-group --blocksize --git-repos-no-status --time-style=+%Y-%m-%d-%H:%M'
-alias tree='eza --tree --icons'
-alias ls='ls --color=auto'
+# eza
+alias lsa='eza --icons -la --git --group-directories-first --color-scale --header --total-size --binary --smart-group --blocksize --git-repos-no-status --time-style=+%Y-%m-%d-%H:%M' # Affichage détaillé
+alias tree='eza --tree --icons' # Affichage arborescence
+alias ls='eza --icons --group-directories-first' # liste simple 
 # Rosé Pine — bascule eza dark/light
 alias ezadark='ln -sf ~/dotfiles/eza/themes/rose-pine.yml ~/dotfiles/eza/theme.yml && echo "🌙 Rosé Pine Main"'
-alias ezalight='ln -sf ~/dotfiles/eza/themes/rose-pine-dawn.yml ~/dotfiles/eza/theme.yml && echo "☀️Rosé Pine Dawn"'
+alias ezalight='ln -sf ~/dotfiles/eza/themes/rose-pine-dawn.yml ~/dotfiles/eza/theme.yml && echo "☀️ Rosé Pine Dawn"'
 
 # Zinit
 alias zinitup='zinit_update'
 
 # Aptitude
 alias apti='sudo aptitude'
-alias cleanapt='su -c "aptitude autoclean; aptitude clean"'
+alias cleanapt='sudo aptitude autoclean && echo "✅ Nettoyage aptitude terminé"'
 
 # Mise à jour des paquets avec interface
 aptiup() {

@@ -2,24 +2,24 @@
 -- # Configuration personnalisée de WezTerm #
 -- ##########################################
 -- Import de l'API WezTerm (pour accéder aux fonctions et constantes de WezTerm) :
-local wezterm = require "wezterm"
+local wezterm = require("wezterm")
 -- Création d'une table qui contiendra les options de configuration.
 -- 'config_builder' : accès à l'autocomplétion.
 local config = wezterm.config_builder()
 -- Charger les raccourcis clavier
-config.keys = require "keybindings"
+config.keys = require("keybindings")
 -- Charger la configuration de l'environnement
-local env = require "environment"
+local env = require("environment")
 
 -- ####################
 -- # Gestion du thème #
 -- ####################
 -- Enregistre l'événement "toggle-theme"
-require "themes.toggle_themes"
+require("themes.toggle_themes")
 -- Déclarer le thème perso comme un color_scheme
-local nord_theme = require "themes.theme_nord"
+local nord_theme = require("themes.theme_nord")
 config.color_schemes = {
-  [nord_theme.name] = nord_theme.colors,
+	[nord_theme.name] = nord_theme.colors,
 }
 -- Appliquer ce thème par défaut
 config.color_scheme = nord_theme.name
@@ -33,22 +33,22 @@ config.default_prog = env.shell
 
 -- Variables d'environnement passées au shell
 config.set_environment_variables = {
-  LANG = env.locale,
-  EDITOR = env.editor,
-  ZDOTDIR = env.zsh_config_dir,
-  WEZTERM_CONFIG_DIR = env.wezterm_config_dir,
-  NVIM_CONFIG_DIR = env.nvim_config_dir,
+	LANG = env.locale,
+	EDITOR = env.editor,
+	ZDOTDIR = env.zsh_config_dir,
+	WEZTERM_CONFIG_DIR = env.wezterm_config_dir,
+	NVIM_CONFIG_DIR = env.nvim_config_dir,
 }
 
 -- Personnalisation de la barre d'onglets :
 config.window_frame = {
-  font_size = 15.0,
+	font_size = 15.0,
 }
 
 -- Aspect du volet inactif :
 config.inactive_pane_hsb = {
-  saturation = 0.5,
-  brightness = 0.4,
+	saturation = 0.5,
+	brightness = 0.4,
 }
 
 -- Définition de la taille initiale des fenêtres du terminal à l'ouverture :
@@ -67,14 +67,38 @@ config.quick_select_remove_styling = true
 
 -- Démarrage de Wezterm en plein écran
 wezterm.on("gui-startup", function(cmd)
-  local _, _, window = wezterm.mux.spawn_window(cmd or {})
-  local gui_win = window:gui_window() -- Fenêtre GUI
-  local overrides = gui_win:get_config_overrides() or {}
-  -- Active la transparence à 0.65 dès le démarrage
-  overrides.window_background_opacity = 0.65
-  gui_win:set_config_overrides(overrides)
-  -- Plein écran
-  window:gui_window():toggle_fullscreen()
+	local _, _, window = wezterm.mux.spawn_window(cmd or {})
+	local gui_win = window:gui_window() -- Fenêtre GUI
+	local overrides = gui_win:get_config_overrides() or {}
+	-- Active la transparence à 0.65 dès le démarrage
+	overrides.window_background_opacity = 0.65
+	gui_win:set_config_overrides(overrides)
+	-- Plein écran
+	window:gui_window():toggle_fullscreen()
+end)
+
+-- Pour lintégration 'wezterm.enabled = true' avec 'zen-mode.nvim'
+wezterm.on("user-var-changed", function(window, pane, name, value)
+	local overrides = window:get_config_overrides() or {}
+	if name == "ZEN_MODE" then
+		local incremental = value:find("+")
+		local number_value = tonumber(value)
+		if incremental ~= nil then
+			while number_value > 0 do
+				window:perform_action(wezterm.action.IncreaseFontSize, pane)
+				number_value = number_value - 1
+			end
+			overrides.enable_tab_bar = false
+		elseif number_value < 0 then
+			window:perform_action(wezterm.action.ResetFontSize, pane)
+			overrides.font_size = nil
+			overrides.enable_tab_bar = true
+		else
+			overrides.font_size = number_value
+			overrides.enable_tab_bar = false
+		end
+	end
+	window:set_config_overrides(overrides)
 end)
 
 -- Obligatoire : retourne l'objet de configuration pour que WezTerm puisse l'appliquer :
