@@ -23,10 +23,6 @@ HISTFILE=~/.zsh_history
 SAVEHIST=10000
 HISTSIZE=10000
 
-# Couleurs de sortie
-alias ls='ls --color=auto'
-alias grep='grep --color=auto'
-
 # Initialisation de l'autocomplétion
 fpath+=~/dotfiles/zsh_functions
 fpath+=~/.zfunc
@@ -140,6 +136,17 @@ precmd() { custom_prompt }
 # SECTION : ALIAS #
 ###################
 
+# Outils CLI 
+#----------- 
+#
+# ls & eza
+alias lsa='eza --icons -la --git --group-directories-first --color-scale --header --total-size --binary --smart-group --blocksize --git-repos-no-status --time-style=+%Y-%m-%d-%H:%M'
+alias tree='eza --tree --icons'
+alias ls='ls --color=auto'
+# Rosé Pine — bascule eza dark/light
+alias ezadark='ln -sf ~/dotfiles/eza/themes/rose-pine.yml ~/dotfiles/eza/theme.yml && echo "🌙 Rosé Pine Main"'
+alias ezalight='ln -sf ~/dotfiles/eza/themes/rose-pine-dawn.yml ~/dotfiles/eza/theme.yml && echo "☀️Rosé Pine Dawn"'
+
 # Zinit
 alias zinitup='zinit_update'
 
@@ -163,8 +170,7 @@ aptiup() {
 # Divers
 alias dotfiles='cd ~/dotfiles && nvim'
 alias lua='lua5.5'
-alias lsa='eza --icons -la --git --group-directories-first --color-scale --header --total-size --binary --smart-group --blocksize --git-repos-no-status --time-style=+%Y-%m-%d-%H:%M'
-alias tree='eza --tree --icons'
+alias grep='grep --color=auto'
 alias adios='systemctl poweroff'
 alias reboot='systemctl reboot'
 alias pyt='python3.14'
