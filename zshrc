@@ -151,6 +151,11 @@ alias ls='eza --icons --group-directories-first' # liste simple
 alias ezadark='ln -sf ~/dotfiles/eza/themes/rose-pine.yml ~/dotfiles/eza/theme.yml && echo "🌙 Rosé Pine Main"'
 alias ezalight='ln -sf ~/dotfiles/eza/themes/rose-pine-dawn.yml ~/dotfiles/eza/theme.yml && echo "☀️ Rosé Pine Dawn"'
 
+# fd-find (fd)
+alias fd='fdfind'
+alias fdf='fdfind --type f' # fichiers seulement
+alias fdd='fdfind --type d' # dossiers seulement
+
 # Zinit
 alias zinitup='zinit_update'
 
@@ -185,3 +190,13 @@ eval "$(uvx --generate-shell-completion zsh)"
 
 # npm
 export PATH="$HOME/.npm-global/bin:$PATH"
+
+#######
+# bat #
+#######
+# Pages de man avec bat :
+export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
+export MANROFFOPT="-c"
+# bat comme pager par défaut
+export PAGER='batcat'
+
