@@ -132,13 +132,17 @@ ${second_line}%f"
 }
 precmd() { custom_prompt }
 
+
 ###################
 # SECTION : ALIAS #
 ###################
 
 # Outils CLI 
 #----------- 
-#
+
+# bat 
+alias batnp='bat --paging=never'
+
 # eza
 alias lsa='eza --icons -la --git --group-directories-first --color-scale --header --total-size --binary --smart-group --blocksize --git-repos-no-status --time-style=+%Y-%m-%d-%H:%M' # Affichage détaillé
 alias tree='eza --tree --icons' # Affichage arborescence
