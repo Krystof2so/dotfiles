@@ -137,6 +137,29 @@ precmd() { custom_prompt }
 # SECTION : ALIAS #
 ###################
 
+# FONCTION D'ALIAS POUR RIPGREP
+# # rga - Recherche toutes les occurrences d'un motif (regex) dans les fichiers
+# d'un type donné, récursivement à partir d'un répertoire cible.
+#
+# Usage : rga <type_de_fichier> <motif> [répertoire]
+#
+# Exemples :
+#   rga py 'def \w+'         # fonctions Python
+#   rga js 'import .+'       # imports JavaScript
+#   rga md '\d\d' docs/      # deux chiffres consécutifs dans des Markdown
+rga() {
+    local filetype="$1"
+    local pattern="$2"
+    local directory="${3:-.}"   # répertoire courant par défaut
+
+    if [[ -z "$filetype" || -z "$pattern" ]]; then
+        echo "Usage: rga <type_de_fichier> <motif> [répertoire]"
+        return 1
+    fi
+
+    rg --only-matching -t "$filetype" "$pattern" "$directory"
+}
+
 # Outils CLI 
 #----------- 
 
@@ -147,6 +170,7 @@ alias batnp='bat --paging=never'
 alias lsa='eza --icons -la --git --group-directories-first --color-scale --header --total-size --binary --smart-group --blocksize --git-repos-no-status --time-style=+%Y-%m-%d-%H:%M' # Affichage détaillé
 alias tree='eza --tree --icons' # Affichage arborescence
 alias ls='eza --icons --group-directories-first' # liste simple 
+
 # Rosé Pine — bascule eza dark/light
 alias ezadark='ln -sf ~/dotfiles/eza/themes/rose-pine.yml ~/dotfiles/eza/theme.yml && echo "🌙 Rosé Pine Main"'
 alias ezalight='ln -sf ~/dotfiles/eza/themes/rose-pine-dawn.yml ~/dotfiles/eza/theme.yml && echo "☀️ Rosé Pine Dawn"'
