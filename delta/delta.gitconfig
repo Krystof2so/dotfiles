@@ -1,0 +1,15 @@
+[core]
+    pager = delta
+
+[interactive]
+    # Active delta pour les commandes interactives comme 'git add -p'
+    diffFilter = delta --color-only
+
+[delta]
+    # Toutes les options propres à delta
+    navigate = true  # navigation avec n/N entre les sections
+    dark = true      # ou light = true, ou rien pour détection auto
+    side-by-side = true
+
+[merge]
+    conflictStyle = zdiff3
