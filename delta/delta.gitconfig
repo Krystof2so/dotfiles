@@ -10,6 +10,12 @@
     navigate = true  # navigation avec n/N entre les sections
     dark = true      # ou light = true, ou rien pour détection auto
     side-by-side = true
+    minus-style = syntax auto  # Coloration syntaxique selon le langage
+    plus-style  = syntax auto
+    zero-style = syntax  # Pour les parties non modifiées du contexte
+    #line-numbers = true  # Affichage des numéros de ligne sur deux colonnes
+    features = rose-pine  # Thème Pin Rosé
+    hyperlinks = true  # Ouvrir les hyperliens 
 
 [merge]
     conflictStyle = zdiff3
