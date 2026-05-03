@@ -1,35 +1,64 @@
 -- ##################################
 -- # themes/toggle_themes.lua       #
--- # Pour basculer entre les thèmes #
+-- # Pour basculer entre les thèmes #
 -- ##################################
 
 -- [[
--- Pour un choix de thème intégré :
--- https://wezterm.org/colorschemes/index.html
+-- Cycle entre les 3 variantes Rosé Pine :
+--   RosePineMain  →  RosePineMoon  →  RosePineDawn  →  RosePineMain  → …
+--
+-- Chaque variante est identifiée par son nom de color_scheme (string).
+-- Le plugin ayant déjà enregistré les palettes dans config.color_schemes
+-- (voir wezterm.lua), on peut basculer simplement via overrides.color_scheme.
 -- ]]
 
-local wezterm = require "wezterm"
+local wezterm = require("wezterm")
+
+-- Ordre du cycle
+local VARIANTS = {
+  "RosePineMain",
+  "RosePineMoon",
+  "RosePineDawn",
+}
+
+-- Opacité associée à chaque variante
+-- Dawn est un thème clair : on monte l'opacité pour un meilleur contraste.
+local OPACITY = {
+  RosePineMain = 0.85,
+  RosePineMoon = 0.85,
+  RosePineDawn = 0.92,
+}
+
+-- Retourne l'index du thème actuel dans VARIANTS (1-based), ou 1 par défaut
+local function current_index(scheme)
+  for i, name in ipairs(VARIANTS) do
+    if name == scheme then
+      return i
+    end
+  end
+  return 1
+end
 
 -- [[
--- Enregistrement d'une fonction callback
--- 'wezterm.on(...)' permet d’écouter des événements personnalisés déclenchés
--- via un raccourci clavier.
--- 'window' = objet qui représente la fenêtre WezTerm dans laquelle on agit.
+-- Écoute l'événement "toggle-theme" déclenché par un raccourci clavier.
+-- 'window' = fenêtre WezTerm dans laquelle l'action est effectuée.
 -- ]]
 wezterm.on("toggle-theme", function(window)
-  -- Récupération des éventuelles surcharges de la fenêtre :
   local overrides = window:get_config_overrides() or {}
-  -- Si thème clair actif, revenir au thème personnalisé de base (appliqué au démarrage) :
-  if overrides.color_scheme == "Atelierseaside (light) (terminal.sexy)" then
-    overrides.color_scheme = nil -- Suppression de la surcharge pour appliquer le thème personnalisé
-    overrides.window_background_opacity = 0.65 -- Transparence pour le thème sombre
-  else
-    -- Sinon, on applique le thème clair intégré :
-    overrides.color_scheme = "Atelierseaside (light) (terminal.sexy)"
-    overrides.window_background_opacity = 0.85 -- Transparence pour le thème clair
-  end
-  -- Appliquer les surcharges pour la fenêtre actuelle.
-  -- Pour une nouvelle fenêtre, cela reste le thème par défaut.
-  -- Mise à jour automatique, sans redémarrage.
+
+  -- Thème actuellement actif (override ou thème par défaut)
+  local current = overrides.color_scheme or "RosePineMain"
+
+  -- Passer au suivant dans le cycle
+  local next_index = (current_index(current) % #VARIANTS) + 1
+  local next_theme = VARIANTS[next_index]
+
+  overrides.color_scheme             = next_theme
+  overrides.window_background_opacity = OPACITY[next_theme]
+
+  -- Mise à jour à chaud, sans redémarrage
   window:set_config_overrides(overrides)
+
+  -- Notification visuelle du thème actif
+  window:toast_notification("WezTerm", "Thème : " .. next_theme, nil, 2000)
 end)

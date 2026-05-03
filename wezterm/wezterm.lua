@@ -1,6 +1,7 @@
 -- ##########################################
 -- # Configuration personnalisée de WezTerm #
 -- ##########################################
+
 -- Import de l'API WezTerm (pour accéder aux fonctions et constantes de WezTerm) :
 local wezterm = require("wezterm")
 -- Création d'une table qui contiendra les options de configuration.
@@ -14,15 +15,24 @@ local env = require("environment")
 -- ####################
 -- # Gestion du thème #
 -- ####################
--- Enregistre l'événement "toggle-theme"
+-- Enregistre l'événement "toggle-theme" (cycle entre les variantes Rosé Pine)
 require("themes.toggle_themes")
--- Déclarer le thème perso comme un color_scheme
-local nord_theme = require("themes.theme_nord")
+
+-- Chargement du plugin Rosé Pine et enregistrement des 3 variantes
+local rosepine = require("themes.theme_rosepine")
 config.color_schemes = {
-	[nord_theme.name] = nord_theme.colors,
+	[rosepine.main.name] = rosepine.main.plugin.colors(),
+	[rosepine.moon.name] = rosepine.moon.plugin.colors(),
+	[rosepine.dawn.name] = rosepine.dawn.plugin.colors(),
 }
--- Appliquer ce thème par défaut
-config.color_scheme = nord_theme.name
+
+-- Variante appliquée au démarrage (main = sombre, moon = plus sombre, dawn = clair)
+config.color_scheme = rosepine.main.name
+
+-- window_frame pour la fancy tab bar (reprend les couleurs de la variante main)
+config.window_frame = rosepine.main.plugin.window_frame()
+-- Surcharge de la taille de police de la tab bar
+config.window_frame.font_size = 15.0
 
 -- ##################
 -- # Configurations #
@@ -71,7 +81,7 @@ wezterm.on("gui-startup", function(cmd)
 	local gui_win = window:gui_window() -- Fenêtre GUI
 	local overrides = gui_win:get_config_overrides() or {}
 	-- Active la transparence à 0.65 dès le démarrage
-	overrides.window_background_opacity = 0.65
+	overrides.window_background_opacity = 0.90
 	gui_win:set_config_overrides(overrides)
 	-- Plein écran
 	window:gui_window():toggle_fullscreen()
