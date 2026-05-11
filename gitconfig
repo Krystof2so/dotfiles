@@ -1,0 +1,17 @@
+[user]
+	name = Krystof2so
+	email = 52052603+Krystof2so@users.noreply.github.com
+[init]
+	defaultBranch = main
+[include]
+    path = ~/dotfiles/delta/delta.gitconfig
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[core]
+	editor = nvim
+[alias]
+	lg = log --pretty=format:'Commit: %h\nAuteur: %an\n%ad (%ar)\nMessage de validation: %s\n\n~~~~~\n'
+[credential]
+	helper = store
