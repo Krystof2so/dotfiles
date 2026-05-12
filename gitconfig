@@ -1,17 +1,37 @@
+####################################################################
+# ~/.gitconfig                                                     #
+#                                                                  #
+# Configuration spécifique à l'utilisateur via l'option '--global' #
+# Cf. 'git help config'                                            #
+####################################################################
+ 
+# Informations d'identité utilisées pour les commits
 [user]
 	name = Krystof2so
 	email = 52052603+Krystof2so@users.noreply.github.com
+
+# Comportement par défaut lors de l'initialisation d'un dépôt
 [init]
 	defaultBranch = main
+
+# Inclusion de fichiers de configuration supplémentaire
 [include]
     path = ~/dotfiles/delta/delta.gitconfig
+
+# Coloration syntaxique dans différentes commandes Git (auto = active)
 [color]
 	diff = auto
 	status = auto
 	branch = auto
+
+# Paramètres centraux de Git
 [core]
 	editor = nvim
+
+# Raccourcis pour commandes spécifiques
 [alias]
 	lg = log --pretty=format:'Commit: %h\nAuteur: %an\n%ad (%ar)\nMessage de validation: %s\n\n~~~~~\n'
+
+# Gestion de la mémorisation des identifiants
 [credential]
-	helper = store
+	helper = libsecret
