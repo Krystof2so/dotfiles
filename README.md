@@ -10,7 +10,6 @@ Ce dépôt contient la configuration complète de mon environnement shell, basé
 
 ```txt
 .
-├── kitty.conf                  # Configuration du terminal Kitty
 ├── README.md                   # Documentation du dépôt (ce fichier)
 ├── zshrc                       # Fichier principal de configuration ZSH
 └── zsh_functions/              # Fonctions ZSH personnalisées
@@ -85,15 +84,6 @@ Le fichier `.zshrc` utilise **Zinit** pour gérer les *plugins* :
 | `icat`     | Utilise `kitten icat` pour afficher des images |
 | `adios`    | Éteint le système via `systemctl poweroff`     |
 | `reboot`   | Redémarre le système                           |
-
---- 
-
-## 🖥️ Terminal *Kitty* (`kitty.conf`)
-
-Le fichier `kitty.conf` contient la configuration pour le terminal **Kitty**. Cette configuration inclut des réglages comme :
-- L'utilisation du thème [Nord](https://www.nordtheme.com/)
-- Le rendu graphique
-- etc.
 
 ---
 
