@@ -26,7 +26,7 @@
 
 # Paramètres centraux de Git
 [core]
-	editor = nvim +'set filetype=gitcommit' +'startinsert'
+	editor = nvim +'startinsert'
 
 # Raccourcis pour commandes spécifiques
 [alias]
