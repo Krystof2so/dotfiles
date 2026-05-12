@@ -224,11 +224,3 @@ export MANROFFOPT="-c"
 # bat comme pager par défaut
 export PAGER='batcat'
 
-#################
-# Gnome-keyring #
-#################
-# Lancer gnome-keyring-daemon si ce n'est pas déjà fait
-if [ -z "$GNOME_KEYRING_CONTROL" ]; then
-    eval $(gnome-keyring-daemon --start --components=secrets --unlock)
-fi
-
