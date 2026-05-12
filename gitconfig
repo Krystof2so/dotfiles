@@ -26,7 +26,7 @@
 
 # Paramètres centraux de Git
 [core]
-	editor = nvim
+	editor = nvim +'set filetype=gitcommit' +'startinsert'
 
 # Raccourcis pour commandes spécifiques
 [alias]
@@ -35,3 +35,4 @@
 # Gestion de la mémorisation des identifiants
 [credential]
 	helper = libsecret
+
