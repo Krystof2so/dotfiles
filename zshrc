@@ -170,7 +170,6 @@ alias batnp='bat --paging=never'
 alias lsa='eza --icons -la --git --group-directories-first --color-scale --header --total-size --binary --smart-group --blocksize --git-repos-no-status --time-style=+%Y-%m-%d-%H:%M' # Affichage détaillé
 alias tree='eza --tree --icons' # Affichage arborescence
 alias ls='eza --icons --group-directories-first' # liste simple 
-
 # Rosé Pine — bascule eza dark/light
 alias ezadark='ln -sf ~/dotfiles/eza/themes/rose-pine.yml ~/dotfiles/eza/theme.yml && echo "🌙 Rosé Pine Main"'
 alias ezalight='ln -sf ~/dotfiles/eza/themes/rose-pine-dawn.yml ~/dotfiles/eza/theme.yml && echo "☀️ Rosé Pine Dawn"'
@@ -179,6 +178,9 @@ alias ezalight='ln -sf ~/dotfiles/eza/themes/rose-pine-dawn.yml ~/dotfiles/eza/t
 alias fd='fdfind'
 alias fdf='fdfind --type f' # fichiers seulement
 alias fdd='fdfind --type d' # dossiers seulement
+
+# git
+alias gst='git status'
 
 # Zinit
 alias zinitup='zinit_update'
