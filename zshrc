@@ -180,6 +180,9 @@ alias fdf='fdfind --type f' # fichiers seulement
 alias fdd='fdfind --type d' # dossiers seulement
 
 # git
+alias gcm='git commit'
+alias gdf='git diff'
+alias glog='git log'
 alias gst='git status'
 
 # Zinit
