@@ -1,0 +1,62 @@
+# **********************************************
+# * Configuration de Lazygit                   *
+# * https://github.com/jesseduffield/lazygit   * 
+#                                              *
+# * Paramètres en surcouche de ceux par défaut *
+# * Attention à l'indentation                  *
+# **********************************************
+
+# ==============================================
+# Comportement général
+# ==============================================
+# Affiche une popup de confirmation avant de quitter Lazygit
+confirmOnQuit: true
+# Edition de fichiers avec Neovim 
+os:
+  editPreset: 'nvim'
+gui:
+  authorColors: {
+    'Krystof2so': '#eb6f92',
+    # Tous les autres
+    '*': '#f6c177'
+  }
+  # Lignes défilées lors du scrolling (fenêtre principale)
+  scrollHeight: 1
+  # Si vrai, augmente la hauteur de la fenêtre latérale focalisée, créant un effet accordéon.
+  expandFocusedSidePanel: true
+  # Longueur des hashs de commit lors de la copie dans le presse-papiers
+  truncateCopiedCommitHashesTo: 8
+
+
+
+# ==============================================
+# Couleurs et styles 
+# ==============================================
+  theme:
+    # Couleur de bordure des fenêtres non focalisées 
+    activeBorderColor:
+      - '#31748f'
+      - bold
+    # Couleur de bordure des fenêtres non focalisées
+    inactiveBorderColor:
+      - '#c4a7e7'
+      - bold
+    # Couleur du texte d'aide des raccourcis clavier dans la ligne du bas
+    optionsTextColor:
+      - '#c4a7e7'
+    # Couleur de fond de la ligne sélectionnée.
+    selectedLineBgColor:
+      - '#403d52'
+    # Couleur de fond de la ligne sélectionnée (vue sans focus)
+    inactiveViewSelectedLineBgColor:
+      - '#2a283e'
+    # Conseils aléatoires
+    showRandomTip: false
+    # Version des Nerd Fonts à utiliser.
+    nerdFontsVersion: '3'
+
+# ==============================================
+# Affichage des logs 
+# ==============================================
+    # Affiche l'intégralité du graphe git par défaut dans la vue des commits 
+    showWholeGraph: true
