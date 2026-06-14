@@ -49,6 +49,24 @@ devtools_auto_update() {
 }
 devtools_auto_update
 
+#########################
+# SECTION : UPDATE RUST #
+#########################
+rust_auto_update() {
+  local update_file="$HOME/.rust-auto-update"
+  local last_update=$([[ -f "$update_file" ]] && cat "$update_file" || echo 0)
+  local now=$(date +%s)
+  if (( now - last_update > 604800 )); then
+    if command -v rustup >/dev/null 2>&1; then
+      echo "🦀 Mise à jour de Rust (rustup, toolchains, composants)..."
+      rustup self update && echo "✅ rustup à jour."
+      rustup update && echo "✅ toolchains à jour."
+    fi 
+    date +%s >| "$update_file"
+  fi 
+}
+rust_auto_update
+
 #####################################
 # SECTION : GESTIONNAIRE DE PLUGINS #
 #####################################
@@ -160,6 +178,30 @@ rga() {
     rg --only-matching -t "$filetype" "$pattern" "$directory"
 }
 
+# Alias pour Neovim (selon les configurations)
+# --------------------------------------------
+nvc() {
+  XDG_CONFIG_HOME="$HOME/.config/nvim" \
+  XDG_DATA_HOME="$HOME/.local/share/nvim" \
+  XDG_STATE_HOME="$HOME/.local/state/nvim" \
+  XDG_CACHE_HOME="$HOME/.cache/nvim" \
+  NVIM_APPNAME=nvcrafted nvim "$@"
+}
+nvlazy() {
+  XDG_CONFIG_HOME="$HOME/.config/nvim" \
+  XDG_DATA_HOME="$HOME/.local/share/nvim" \
+  XDG_STATE_HOME="$HOME/.local/state/nvim" \
+  XDG_CACHE_HOME="$HOME/.cache/nvim" \
+  NVIM_APPNAME=lazyvim nvim "$@"
+}
+nvtest() {
+  XDG_CONFIG_HOME="$HOME/.config/nvim" \
+  XDG_DATA_HOME="$HOME/.local/share/nvim" \
+  XDG_STATE_HOME="$HOME/.local/state/nvim" \
+  XDG_CACHE_HOME="$HOME/.cache/nvim" \
+  NVIM_APPNAME=nvtest nvim "$@"
+}
+
 # Outils CLI 
 #----------- 
 
@@ -184,6 +226,7 @@ alias gcm='git commit'
 alias gdf='git diff'
 alias glog='git log'
 alias gst='git status'
+alias lazyg='lazygit'
 
 # Zinit
 alias zinitup='zinit_update'
@@ -206,7 +249,7 @@ aptiup() {
 }
 
 # Divers
-alias dotfiles='cd ~/dotfiles && nvim'
+alias dotfiles='cd ~/dotfiles && nvc'
 alias lua='lua5.5'
 alias grep='grep --color=auto'
 alias adios='systemctl poweroff'
