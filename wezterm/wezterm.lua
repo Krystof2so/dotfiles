@@ -66,7 +66,9 @@ config.initial_cols = 120 -- 120 caractères de largeur
 config.initial_rows = 28 -- 28 lignes de heuteur
 
 -- Personnalisation de l'apparence :
-config.font_size = 14 -- Taille de la police
+config.font = wezterm.font("FiraCode Nerd Font Mono") -- Police (avec glyphes Nerd Font)
+config.font_size = 16 -- Taille de la police
+config.harfbuzz_features = { "calt=1", "clig=1", "liga=1" } -- Active les ligatures de Fira Code
 
 -- Scrolling :
 config.scrollback_lines = 3500 -- Nombre de lignes conservées
