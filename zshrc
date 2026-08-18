@@ -255,6 +255,7 @@ alias grep='grep --color=auto'
 alias adios='systemctl poweroff'
 alias reboot='systemctl reboot'
 alias pyt='python3.14'
+alias nvupdate='~/Apps_ext/Neovim/update_nvim.sh'
 
 # Complétions UV
 eval "$(uv generate-shell-completion zsh)"

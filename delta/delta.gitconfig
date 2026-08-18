@@ -14,8 +14,11 @@
     plus-style  = syntax auto
     zero-style = syntax  # Pour les parties non modifiées du contexte
     #line-numbers = true  # Affichage des numéros de ligne sur deux colonnes
-    features = rose-pine  # Thème Pin Rosé
+    features = rose-pine-moon  # Thème Pin Rosé
     hyperlinks = true  # Ouvrir les hyperliens 
+
+[delta "rose-pine-moon"]
+    syntax-theme = rose-pine-moon
 
 [merge]
     conflictStyle = zdiff3
