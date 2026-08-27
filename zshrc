@@ -15,21 +15,25 @@ autoload -Uz compinit && compinit
 # --- 3. Environnement de base --- #
 source "$HOME/dotfiles/zsh/env.zsh"
 
-# --- 4. Outils Python (pyenv) --- #
-source "$HOME/dotfiles/zsh/python.zsh"
-
-# --- 5. Plugins Zsh --- #
+# --- 4. Plugins Zsh --- #
 source "$HOME/dotfiles/zsh/plugins.zsh"
 
-# --- 6. Outils Rust --- #
-source "$HOME/dotfiles/zsh/rust.zsh"
-
-# --- 7. Prompt personnalisé --- #
+# --- 5. Prompt personnalisé --- #
 source "$HOME/dotfiles/zsh/prompt.zsh"
 
-# --- 8. Alias --- #
+# --- 6. Alias --- #
 source "$HOME/dotfiles/zsh/aliases.zsh"
 
-# --- 9. Intégration WezTerm --- #
+# --- 7. Outils (chargement conditionnel si mise à jour nécessaire) ---
+if needs_global_update; then
+  echo "🔄 Mise à jour automatique de tous les outils..."
+  source "$HOME/dotfiles/zsh/tools/zinit.zsh"
+  source "$HOME/dotfiles/zsh/tools/rust.zsh"
+  source "$HOME/dotfiles/zsh/tools/python.zsh"
+  date +%s >| "$HOME/.zinit-auto-update"  # Met à jour le fichier central
+  echo "\n ✅ Toutes les mises à jour sont terminées."
+fi
+
+# --- 8. Intégration WezTerm --- #
 source "$HOME/dotfiles/wezterm/wezterm.sh"
 

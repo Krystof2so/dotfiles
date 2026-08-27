@@ -2,20 +2,18 @@
 # FONCTIONS UTILITAIRES PARTAGÉES #
 ###################################
 
-# --- Fonction générique pour les mises à jour automatiques (tous les 7 jours) ---
-auto_update() {
-  local tool_name="$1"
-  local update_command="$2"
-  local update_file="$HOME/.${tool_name}-auto-update"
+# =============================================================================
+# FONCTIONS UTILITAIRES PARTAGÉES - Version simplifiée
+# =============================================================================
+
+# --- Fonction pour vérifier si une mise à jour globale est nécessaire ---
+needs_global_update() {
+  local update_file="$HOME/.zinit-auto-update"  # Fichier central pour TOUTES les mises à jour
   local last_update=$([[ -f "$update_file" ]] && cat "$update_file" || echo 0)
   local now=$(date +%s)
-  local interval=604800  # 7 jours en secondes
+  local interval=604800  # 7 jours
 
-  if (( now - last_update > interval )); then
-    echo "🔄 Mise à jour automatique : $tool_name"
-    eval "$update_command"
-    date +%s >| "$update_file"
-  fi
+  (( now - last_update > interval ))
 }
 
 # --- Fonction utilitaire pour PATH ---
