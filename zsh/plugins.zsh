@@ -21,10 +21,15 @@ zinit light-mode for \
   zdharma-continuum/zinit-annex-rust
 
 # --- Plugins Zsh --- #
-zinit ice depth=1 wait lucid
+zinit ice blockf atpull'zinit creinstall -q .'
+zinit light zsh-users/zsh-completions
+autoload -Uz compinit && compinit
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-syntax-highlighting
-zinit light zsh-users/zsh-completions
+
+# --- Complétions d'outils externes (après compinit) --- #
+eval "$(uv generate-shell-completion zsh)"
+eval "$(uvx --generate-shell-completion zsh)"
 
 # --- Configuration des plugins --- #
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#8c8c8c'

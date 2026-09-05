@@ -10,7 +10,6 @@ source "$HOME/dotfiles/zsh/utils.zsh"
 
 # --- 2. Autocomplétion --- #
 fpath+=~/.zfunc
-autoload -Uz compinit && compinit
 
 # --- 3. Environnement de base --- #
 source "$HOME/dotfiles/zsh/env.zsh"
@@ -33,7 +32,4 @@ if needs_global_update; then
   date +%s >| "$HOME/.zinit-auto-update"  # Met à jour le fichier central
   echo "\n ✅ Toutes les mises à jour sont terminées."
 fi
-
-# --- 8. Intégration WezTerm --- #
-source "$HOME/dotfiles/wezterm/wezterm.sh"
 

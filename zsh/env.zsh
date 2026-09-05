@@ -30,7 +30,3 @@ HISTSIZE=1000
 export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
 export MANROFFOPT="-c"
 export PAGER='batcat'
-
-# --- Complétions UV (Python) --- #
-eval "$(uv generate-shell-completion zsh)"
-eval "$(uvx --generate-shell-completion zsh)"
