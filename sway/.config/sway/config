@@ -1,0 +1,7 @@
+### Variables globales (disponibles dans tous les fichiers inclus)
+set $left h
+set $down j
+set $up k
+set $right l
+
+include conf.d/*.conf
