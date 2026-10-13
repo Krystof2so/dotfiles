@@ -86,10 +86,10 @@ wezterm.on("gui-startup", function(cmd)
 	overrides.window_background_opacity = 0.90
 	gui_win:set_config_overrides(overrides)
 	-- Plein écran si nous ne sommes pas sous wayland
-    local is_wayland = wezterm.env.XDG_SESSION_TYPE == "wayland" and wezterm.env.WAYLAND_DISPLAY ~= nil 
-    if not is_wayland then
-    	window:gui_window():toggle_fullscreen()
-    end
+	local is_wayland = os.getenv("WAYLAND_DISPLAY") ~= nil
+	if not is_wayland then
+		window:gui_window():toggle_fullscreen()
+	end
 end)
 
 -- Pour lintégration 'wezterm.enabled = true' avec 'zen-mode.nvim'

@@ -20,3 +20,7 @@ needs_global_update() {
 path_prepend() {
   [[ ":$PATH:" != *":$1:"* ]] && export PATH="$1:$PATH"
 }
+
+is_installed() {
+  command -v "$1" >/dev/null 2>&1
+}
