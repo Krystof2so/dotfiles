@@ -33,7 +33,7 @@ alias zinitup='zinit_update'
 
 ## Aptitude
 alias apti='sudo aptitude'
-alias cleanapt='sudo aptitude autoclean && echo "✅ Nettoyage aptitude terminé"'
+alias cleanapt='sudo aptitude autoclean && sudo aptitude clean && echo "✅ Nettoyage aptitude terminé"'
 
 # --- Neovim --- #
 nvc() {
