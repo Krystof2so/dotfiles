@@ -1,0 +1,15 @@
+[Desktop Entry]
+Name=WezTerm
+Comment=Terminal GPU moderne
+Exec=/usr/local/bin/wezterm
+Icon=wezterm
+Terminal=false
+Type=Application
+Categories=System;TerminalEmulator;
+StartupNotify=true
+X-GNOME-Autostart-enabled=true
+NoDisplay=false
+Hidden=false
+Name[fr_FR]=WezTerm
+Comment[fr_FR]=Terminal GPU moderne
+X-GNOME-Autostart-Delay=0
