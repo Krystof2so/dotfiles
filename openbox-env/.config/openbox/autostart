@@ -1,0 +1,7 @@
+######################################################################
+# Ces commandes sont exécutées au démarrage d'une session X Openbox. #
+######################################################################
+
+feh --bg-max ~/dotfiles/openbox-env/wallpapers/NB-vallée_Oloron.jpg &
+
+
