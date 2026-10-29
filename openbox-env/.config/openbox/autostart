@@ -2,6 +2,11 @@
 # Ces commandes sont exécutées au démarrage d'une session X Openbox. #
 ######################################################################
 
+# --- Fond d'écran ---
 feh --bg-max ~/dotfiles/openbox-env/wallpapers/NB-vallée_Oloron.jpg &
+
+# --- Pavé numérique ---
+numlockx on &
+
 
 
