@@ -134,7 +134,7 @@
     <!-- Durée d'affichage de la fenêtre contextuelle lors du changement de 
        bureau, en millisecondes. Définissez cette valeur sur 0 pour désactiver 
        la fenêtre contextuelle. -->
-    <popupTime>875</popupTime>
+    <popupTime>0</popupTime>
   </desktops>
   <resize>
     <drawContents>yes</drawContents>
