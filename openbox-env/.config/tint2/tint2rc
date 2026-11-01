@@ -74,7 +74,7 @@ border_color_pressed = #403d52 100
 # Panneau
 #-------------------------------------
 panel_items = TLBSC 
-panel_size = 100% 35
+panel_size = 100% 45
 panel_margin = 0 0
 panel_padding = 2 0 2
 panel_background_id = 1
@@ -167,7 +167,7 @@ launcher_icon_theme_override = 0
 startup_notifications = 1
 launcher_tooltip = 1
 launcher_item_app = wezterm.desktop
-launcher_item_app = org.gnome.Screenshot.desktop
+launcher_item_app = screengrab.desktop
 launcher_item_app = firefox.desktop
 launcher_item_app = obsidian.desktop
 launcher_item_app = discord.desktop

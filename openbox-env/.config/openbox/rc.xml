@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- LIGNE 303 -->
 <!-- ################################################################ -->
 <!-- la configuration principale (thème, bureaux, souris, raccourcis) -->
 <!-- ################################################################ -->
@@ -180,9 +181,14 @@
     <moveButton>Middle</moveButton>
     <!-- 'Left', 'Middle', 'Right' -->
   </dock>
+  <!-- Raccourcis clavier --> 
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
-    <!-- Keybindings for desktop switching -->
+    <!-- A = Alt
+         C = Control (Ctrl)
+         S = Shift 
+         W = Touche Windows --> 
+    <!-- Raccourcis clavier pour changer de bureau -->
     <keybind key="C-A-Left">
       <action name="GoToDesktop">
         <to>left</to>
@@ -195,18 +201,6 @@
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="C-A-Up">
-      <action name="GoToDesktop">
-        <to>up</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="C-A-Down">
-      <action name="GoToDesktop">
-        <to>down</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
     <keybind key="S-A-Left">
       <action name="SendToDesktop">
         <to>left</to>
@@ -216,18 +210,6 @@
     <keybind key="S-A-Right">
       <action name="SendToDesktop">
         <to>right</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="S-A-Up">
-      <action name="SendToDesktop">
-        <to>up</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="S-A-Down">
-      <action name="SendToDesktop">
-        <to>down</to>
         <wrap>no</wrap>
       </action>
     </keybind>
@@ -254,27 +236,24 @@
     <keybind key="W-d">
       <action name="ToggleShowDesktop"/>
     </keybind>
-    <!-- Keybindings for windows -->
+    <!-- Raccourcis clavier pour les fenêtres -->
+    <!-- Ferme la fenêtre -->
     <keybind key="A-F4">
       <action name="Close"/>
     </keybind>
+    <!-- Change le focus -->
     <keybind key="A-Escape">
       <action name="Lower"/>
       <action name="FocusToBottom"/>
       <action name="Unfocus"/>
     </keybind>
+    <!-- Affiche le menu de la fenêtre --> 
     <keybind key="A-space">
       <action name="ShowMenu">
         <menu>client-menu</menu>
       </action>
     </keybind>
-    <!-- Take a screenshot of the current window with scrot when Alt+Print are pressed -->
-    <keybind key="A-Print">
-      <action name="Execute">
-        <command>scrot -s</command>
-      </action>
-    </keybind>
-    <!-- Keybindings for window switching -->
+    <!-- Raccourcis clavier pour changer de fenêtre -->
     <keybind key="A-Tab">
       <action name="NextWindow">
         <finalactions>
@@ -293,18 +272,8 @@
         </finalactions>
       </action>
     </keybind>
-    <keybind key="C-A-Tab">
-      <action name="NextWindow">
-        <panels>yes</panels>
-        <desktop>yes</desktop>
-        <finalactions>
-          <action name="Focus"/>
-          <action name="Raise"/>
-          <action name="Unshade"/>
-        </finalactions>
-      </action>
-    </keybind>
-    <!-- Keybindings for window switching with the arrow keys -->
+    <!-- Raccourcis clavier pour passer d'une fenêtre à l'autre à 
+    l'aide des touches fléchées -->
     <keybind key="W-S-Right">
       <action name="DirectionalCycleWindows">
         <direction>right</direction>
@@ -325,7 +294,8 @@
         <direction>down</direction>
       </action>
     </keybind>
-    <!-- Keybindings for running applications -->
+    <!-- Raccourcis clavier pour les applications en cours d'exécution -->
+    <!-- gestionnaire de fichiers 
     <keybind key="W-e">
       <action name="Execute">
         <startupnotify>
@@ -334,11 +304,11 @@
         </startupnotify>
         <command>kfmclient openProfile filemanagement</command>
       </action>
-    </keybind>
-    <!-- Launch scrot when Print is pressed -->
-    <keybind key="Print">
+    </keybind> -->
+    <!-- Lancer 'screengrab' -->
+    <keybind key="W-P">
       <action name="Execute">
-        <command>scrot</command>
+        <command>screengrab</command>
       </action>
     </keybind>
   </keyboard>
@@ -677,31 +647,30 @@
     </context>
   </mouse>
   <menu>
-    <!-- You can specify more than one menu file in here and they are all loaded,
-       just don't make menu ids clash or, well, it'll be kind of pointless -->
-    <!-- default menu file (or custom one in $HOME/.config/openbox/) -->
-    <!-- system menu files on Debian systems -->
+    <!-- Spécifier plusieurs fichiers de menu ici et ils seront tous chargés.
+       Veillez à ce que les identifiants de menu ne se heurtent pas. -->
+    <!-- fichier de menu par défaut (ou fichier personnalisé dans $HOME/.config/openbox/) -->
+    <!-- fichiers de menu système sur les systèmes Debian -->
     <file>/var/lib/openbox/debian-menu.xml</file>
     <file>menu.xml</file>
+    <!-- si un appui-maintenu dure plus longtemps que ce réglage (en millisecondes),
+       le menu est à nouveau masqué -->
     <hideDelay>200</hideDelay>
-    <!-- if a press-release lasts longer than this setting (in milliseconds), the
-       menu is hidden again -->
+    <!-- centre les sous-menus verticalement par rapport à l'entrée parente -->
     <middle>no</middle>
-    <!-- center submenus vertically about the parent entry -->
+    <!-- délai avant d'afficher un sous-menu après avoir survolé l'entrée parente.
+       si cette valeur est négative, alors le délai est infini et le
+       sous-menu ne sera pas affiché avant d'être cliqué -->
     <submenuShowDelay>100</submenuShowDelay>
-    <!-- time to delay before showing a submenu after hovering over the parent
-       entry.
-       if this is a negative value, then the delay is infinite and the
-       submenu will not be shown until it is clicked on -->
+    <!-- délai avant de masquer un sous-menu lors de la sélection d'une autre
+       entrée dans le menu parent
+       si cette valeur est négative, alors le délai est infini et le
+       sous-menu ne sera pas masqué avant l'ouverture d'un autre sous-menu -->
     <submenuHideDelay>400</submenuHideDelay>
-    <!-- time to delay before hiding a submenu when selecting another
-       entry in parent menu
-       if this is a negative value, then the delay is infinite and the
-       submenu will not be hidden until a different submenu is opened -->
+    <!-- contrôle si les icônes apparaissent dans le menu client-list-(combined-) -->
     <showIcons>yes</showIcons>
-    <!-- controls if icons appear in the client-list-(combined-)menu -->
+    <!-- affiche la section de gestion des bureaux dans le menu client-list-(combined-) -->
     <manageDesktops>yes</manageDesktops>
-    <!-- show the manage desktops section in the client-list-(combined-)menu -->
   </menu>
   <applications>
     <!--
