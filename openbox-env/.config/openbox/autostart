@@ -5,6 +5,9 @@
 # --- Fond d'écran ---
 feh --bg-max ~/dotfiles/openbox-env/wallpapers/NB-vallée_Oloron.jpg &
 
+# --- Curseur --- 
+xsetroot -cursor_name left_ptr &
+
 # --- Panneau/Barre des tâches --- 
 tint2 &
 

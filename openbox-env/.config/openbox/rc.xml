@@ -44,7 +44,7 @@
     <primaryMonitor>1</primaryMonitor>
   </placement>
   <theme>
-    <name>Clearlooks-Olive</name>
+    <name>Artwiz-boxed</name>
     <titleLayout>NLIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -181,13 +181,13 @@
     <moveButton>Middle</moveButton>
     <!-- 'Left', 'Middle', 'Right' -->
   </dock>
-  <!-- Raccourcis clavier --> 
+  <!-- Raccourcis clavier -->
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
     <!-- A = Alt
          C = Control (Ctrl)
          S = Shift 
-         W = Touche Windows --> 
+         W = Touche Windows -->
     <!-- Raccourcis clavier pour changer de bureau -->
     <keybind key="C-A-Left">
       <action name="GoToDesktop">
@@ -247,7 +247,7 @@
       <action name="FocusToBottom"/>
       <action name="Unfocus"/>
     </keybind>
-    <!-- Affiche le menu de la fenêtre --> 
+    <!-- Affiche le menu de la fenêtre -->
     <keybind key="A-space">
       <action name="ShowMenu">
         <menu>client-menu</menu>
@@ -294,7 +294,16 @@
         <direction>down</direction>
       </action>
     </keybind>
-    <!-- Raccourcis clavier pour les applications en cours d'exécution -->
+    <!-- Raccourcis clavier pour ouvrir le menu des applications -->
+    <keybind key="W-m">
+      <action name="ShowMenu">
+        <menu>root-menu</menu>
+        <position>
+          <x>center</x>
+          <y>center</y>
+        </position>
+      </action>
+    </keybind>
     <!-- gestionnaire de fichiers 
     <keybind key="W-e">
       <action name="Execute">

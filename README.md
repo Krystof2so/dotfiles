@@ -240,6 +240,28 @@ Sous Debian, `bat` et `fd` s'installent sous les noms `batcat` et `fdfind`, d'o�
 
 ---
 
+## Éléments installés hors du dépôt
+
+### Icônes Rosé Pine (GTK)
+
+- **Source** : https://github.com/rose-pine/gtk/releases/latest
+  (archive `rose-pine-icons.tar.gz`, licence MIT)
+- **Emplacement** : `~/Apps_ext/Themes/icons/rose-pine-icons`
+- **Installation** :
+  ```bash
+  cd ~/Apps_ext/Themes
+  mkdir -p icons
+  tar -xzf rose-pine-icons.tar.gz --strip-components=1 \
+      --exclude='._*' --warning=no-unknown-keyword -C icons
+  mkdir -p ~/.icons
+  ln -s ~/Apps_ext/Themes/icons/rose-pine-icons ~/.icons/rose-pine-icons
+  ```
+- **Activation** : `gtk-icon-theme-name=rose-pine-icons` dans
+  `~/.config/gtk-3.0/settings.ini`
+- **Pourquoi hors du dépôt** : poids du jeu d'icônes.
+
+---
+
 ## 🚀 Installation
 
 ```zsh

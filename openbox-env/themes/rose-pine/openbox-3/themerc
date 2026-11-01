@@ -1,0 +1,118 @@
+!# Rose Pine
+!# Thème Openbox recoloré avec la palette Rosé Pine (variante principale).
+!# Basé sur Clearlooks-Evolving ("Clearlooks as it evolves in gnome-git").
+
+# Polices
+
+*.font: shadow=n
+window.active.label.text.font:shadow=y:shadowtint=30:shadowoffset=1
+window.inactive.label.text.font:shadow=y:shadowtint=00:shadowoffset=0
+menu.items.font:shadow=y:shadowtint=0:shadowoffset=1
+
+!# Informations générales
+
+border.width: 1
+padding.width: 3
+padding.height: 2
+window.handle.width: 3
+window.client.padding.width: 0
+menu.overlap: 2
+*.justify: center
+
+!# Réglage des ombres
+
+*.bg.highlight: 50
+*.bg.shadow:    05
+
+window.active.title.bg.highlight: 35
+window.active.title.bg.shadow:    05
+
+window.inactive.title.bg.highlight: 30
+window.inactive.title.bg.shadow:    05
+
+window.*.grip.bg.highlight: 50
+window.*.grip.bg.shadow:    30
+
+window.*.handle.bg.highlight: 50
+window.*.handle.bg.shadow:    30
+
+!# Paramètres du menu
+
+menu.border.color: #403d52
+menu.border.width: 1
+
+menu.title.bg: solid flat
+menu.title.bg.color: #26233a
+menu.title.text.color: #c4a7e7
+
+menu.items.bg: Flat Solid
+menu.items.bg.color: #191724
+menu.items.text.color: #e0def4
+menu.items.disabled.text.color: #6e6a86
+
+menu.items.active.bg: solid flat 
+
+menu.items.active.bg.color: #403d52
+menu.items.active.text.color: #e0def4
+
+menu.separator.width: 1
+menu.separator.padding.width: 0
+menu.separator.padding.height: 3
+menu.separator.color: #403d52
+
+!# Définir les identifiants (une seul fois)
+
+window.*.handle.bg: Raised solid
+window.*.handle.bg.color: #1f1d2e
+
+window.*.grip.bg: Raised solid
+window.*.grip.bg.color: #403d52
+
+! Bordures
+window.active.border.color: #c4a7e7
+window.inactive.border.color: #403d52
+
+! Trait entre la barre de titre et la fenêtre
+window.active.title.separator.color: #c4a7e7
+window.inactive.title.separator.color: #403d52
+
+! Barre de titre
+window.active.title.bg: Flat Solid
+window.active.title.bg.color: #1f1d2e
+window.inactive.title.bg: Flat Solid
+window.inactive.title.bg.color: #191724
+
+! Titre
+window.active.label.bg: Parentrelative
+window.active.label.text.color: #e0def4
+
+! Boutons, fenêtre active
+window.active.button.*.bg: Flat Solid
+window.active.button.*.bg.color: #1f1d2e
+window.active.button.*.image.color: #e0def4
+
+window.active.button.hover.bg.color: #403d52
+window.active.button.hover.image.color: #e0def4
+
+window.active.button.pressed.bg: Flat Solid
+window.active.button.pressed.bg.color: #524f67
+
+! OSD : popups d'Openbox (Alt+Tab, indicateur de bureau)
+
+osd.border.width: 1
+osd.border.color: #c4a7e7
+
+osd.bg: flat border solid
+osd.bg.color: #26233a
+osd.bg.border.color: #403d52
+
+osd.active.label.bg: parentrelative
+osd.active.label.text.color: #e0def4
+
+osd.inactive.label.bg: parentrelative
+osd.inactive.label.text.color: #6e6a86
+
+osd.hilight.bg: flat solid
+osd.hilight.bg.color: #403d52
+osd.unhilight.bg: flat solid
+osd.unhilight.bg.color: #26233a
