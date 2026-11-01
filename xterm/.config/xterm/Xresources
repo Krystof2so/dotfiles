@@ -1,0 +1,37 @@
+! xterm : Rosé Pine, Cascadia Code
+! Chargé par : xrdb -merge ~/.config/xterm/Xresources
+
+! Police (rendu TrueType via Xft)
+XTerm*renderFont: true
+XTerm*faceName: Cascadia Code
+XTerm*faceSize: 15
+
+! Texte et fenêtre
+XTerm*utf8: 1
+XTerm*internalBorder: 8
+XTerm*scrollBar: false
+XTerm*saveLines: 10000
+
+! Couleurs Rosé Pine
+XTerm*background: #191724
+XTerm*foreground: #e0def4
+XTerm*cursorColor: #e0def4
+XTerm*highlightColor: #403d52
+XTerm*highlightTextColor: #e0def4
+
+XTerm*color0: #26233a
+XTerm*color1: #eb6f92
+XTerm*color2: #31748f
+XTerm*color3: #f6c177
+XTerm*color4: #9ccfd8
+XTerm*color5: #c4a7e7
+XTerm*color6: #ebbcba
+XTerm*color7: #e0def4
+XTerm*color8: #6e6a86
+XTerm*color9: #eb6f92
+XTerm*color10: #31748f
+XTerm*color11: #f6c177
+XTerm*color12: #9ccfd8
+XTerm*color13: #c4a7e7
+XTerm*color14: #ebbcba
+XTerm*color15: #e0def4
