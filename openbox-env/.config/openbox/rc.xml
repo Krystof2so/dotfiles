@@ -336,7 +336,7 @@
     <!-- Luminosité -->
     <keybind key="W-F6">
       <action name="Execute">
-        <command>brightnessctl set 5%-</command>
+        <command>brightnessctl -n set 5%-</command>
       </action>
     </keybind>
     <keybind key="W-F7">
