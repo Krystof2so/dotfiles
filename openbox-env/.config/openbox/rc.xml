@@ -319,6 +319,12 @@
         <command>screengrab</command>
       </action>
     </keybind>
+    <!-- Affiche la dernière notification 'dunst' -->
+    <keybind key="W-H">
+      <action name="Execute">
+        <command>dunstctl history-pop</command>
+      </action>
+    </keybind>
     <!-- Volume -->
     <keybind key="W-KP_Add">
       <action name="Execute">
