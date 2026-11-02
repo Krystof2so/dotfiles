@@ -58,10 +58,10 @@
     <keepBorder>yes</keepBorder>
     <animateIconify>yes</animateIconify>
     <font place="ActiveWindow">
-      <name>Inter Display SemiBold</name><size>12</size><weight>Normal</weight><slant>Normal</slant>
+      <name>Inter Display SemiBold</name><size>14</size><weight>Normal</weight><slant>Normal</slant>
     </font>
     <font place="InactiveWindow">
-      <name>Inter Display Medium</name><size>13</size><weight>Normal</weight><slant>Normal</slant>
+      <name>Inter Display Medium</name><size>14</size><weight>Normal</weight><slant>Normal</slant>
     </font>
     <font place="MenuHeader">
       <name>Inter Medium</name><size>13</size><weight>Normal</weight><slant>Normal</slant>
@@ -306,13 +306,13 @@
       </action>
     </keybind> -->
     <!-- Lancer 'screengrab' -->
-    <keybind key="W-P">
+    <keybind key="W-p">
       <action name="Execute">
         <command>screengrab</command>
       </action>
     </keybind>
     <!-- Affiche la dernière notification 'dunst' -->
-    <keybind key="W-H">
+    <keybind key="W-h">
       <action name="Execute">
         <command>dunstctl history-pop</command>
       </action>
