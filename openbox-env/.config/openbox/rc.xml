@@ -641,9 +641,6 @@
       <mousebind button="Right" action="Press">
         <action name="Focus"/>
         <action name="Raise"/>
-        <action name="Execute">
-          <command>jgmenu_run</command>
-        </action>
       </mousebind>
     </context>
     <context name="Root">
@@ -655,7 +652,7 @@
       </mousebind>
       <mousebind button="Right" action="Press">
         <action name="Execute">
-          <menu>jgmenu_run</menu>
+          <command>jgmenu_run</command>
         </action>
       </mousebind>
     </context>
