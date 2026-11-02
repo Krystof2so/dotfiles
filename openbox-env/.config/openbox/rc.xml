@@ -260,7 +260,7 @@
         <direction>down</direction>
       </action>
     </keybind>
-    <!-- Tiling manuel : demi-écrans -->
+    <!-- Tiling manuel -->
     <keybind key="W-A-Left">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo">
@@ -278,6 +278,12 @@
         <width>50%</width>
         <height>100%</height>
       </action>
+    </keybind>
+    <keybind key="W-A-Up">
+      <action name="ToggleMaximize"/>
+    </keybind>
+    <keybind key="W-A-Down">
+      <action name="Unmaximize"/>
     </keybind>
     <!-- Raccourcis clavier pour ouvrir le menu des applications -->
     <keybind key="W-m">
