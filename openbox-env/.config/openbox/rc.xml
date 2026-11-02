@@ -267,6 +267,16 @@
         <command>jgmenu_run</command>
       </action>
     </keybind>
+    <!-- Lancer le terminal xterm -->
+    <keybind key="W-Return">
+      <action name="Execute">
+        <startupnotify>
+          <enabled>true</enabled>
+          <name>xterm</name>
+        </startupnotify>
+        <command>xterm</command>
+      </action>
+    </keybind>
     <!-- gestionnaire de fichiers 
     <keybind key="W-e">
       <action name="Execute">
