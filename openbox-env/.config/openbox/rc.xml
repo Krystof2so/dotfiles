@@ -59,58 +59,22 @@
     <keepBorder>yes</keepBorder>
     <animateIconify>yes</animateIconify>
     <font place="ActiveWindow">
-      <name>Lato Heavy</name>
-      <size>13</size>
-      <!-- font size in points -->
-      <weight>Normal</weight>
-      <!-- 'bold' or 'normal' -->
-      <slant>Normal</slant>
-      <!-- 'italic' or 'normal' -->
+      <name>Inter Display SemiBold</name><size>10</size><weight>Normal</weight><slant>Normal</slant>
     </font>
     <font place="InactiveWindow">
-      <name>Lato Heavy</name>
-      <size>13</size>
-      <!-- font size in points -->
-      <weight>Normal</weight>
-      <!-- 'bold' or 'normal' -->
-      <slant>Italic</slant>
-      <!-- 'italic' or 'normal' -->
+      <name>Inter Display Medium</name><size>10</size><weight>Normal</weight><slant>Normal</slant>
     </font>
     <font place="MenuHeader">
-      <name>sans</name>
-      <size>9</size>
-      <!-- font size in points -->
-      <weight>normal</weight>
-      <!-- 'bold' or 'normal' -->
-      <slant>normal</slant>
-      <!-- 'italic' or 'normal' -->
+      <name>Inter Medium</name><size>10</size><weight>Normal</weight><slant>Normal</slant>
     </font>
     <font place="MenuItem">
-      <name>sans</name>
-      <size>9</size>
-      <!-- font size in points -->
-      <weight>normal</weight>
-      <!-- 'bold' or 'normal' -->
-      <slant>normal</slant>
-      <!-- 'italic' or 'normal' -->
+      <name>Inter</name><size>10</size><weight>Normal</weight><slant>Normal</slant>
     </font>
     <font place="ActiveOnScreenDisplay">
-      <name>sans</name>
-      <size>9</size>
-      <!-- font size in points -->
-      <weight>bold</weight>
-      <!-- 'bold' or 'normal' -->
-      <slant>normal</slant>
-      <!-- 'italic' or 'normal' -->
+      <name>Inter Bold</name><size>10</size><weight>Normal</weight><slant>Normal</slant>
     </font>
     <font place="InactiveOnScreenDisplay">
-      <name>sans</name>
-      <size>9</size>
-      <!-- font size in points -->
-      <weight>bold</weight>
-      <!-- 'bold' or 'normal' -->
-      <slant>normal</slant>
-      <!-- 'italic' or 'normal' -->
+      <name>Inter SemiBold</name><size>10</size><weight>Normal</weight><slant>Normal</slant>
     </font>
   </theme>
   <desktops>
