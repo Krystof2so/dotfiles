@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- LIGNE 303 -->
 <!-- ################################################################ -->
 <!-- la configuration principale (thème, bureaux, souris, raccourcis) -->
 <!-- ################################################################ -->
@@ -259,6 +258,25 @@
     <keybind key="W-S-Down">
       <action name="DirectionalCycleWindows">
         <direction>down</direction>
+      </action>
+    </keybind>
+    <!-- Tiling manuel : demi-écrans -->
+    <keybind key="W-A-Left">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <x>0</x>
+        <y>0</y>
+        <width>50%</width>
+        <height>100%</height>
+      </action>
+    </keybind>
+    <keybind key="W-A-Right">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <x>50%</x>
+        <y>0</y>
+        <width>50%</width>
+        <height>100%</height>
       </action>
     </keybind>
     <!-- Raccourcis clavier pour ouvrir le menu des applications -->
