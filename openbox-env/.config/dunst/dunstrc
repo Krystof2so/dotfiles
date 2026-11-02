@@ -319,16 +319,16 @@
 [urgency_low]
     # IMPORTANT : les couleurs doivent être définies entre guillemets.
     # Sinon, le caractère « # » et ce qui suit seraient interprétés comme un commentaire.
-    background = "#1f1d2e"
+    background = "#2a2740"
     foreground = "#908caa"
-    frame_color = "#26233a"
+    frame_color = "#393552"
     highlight = "#908caa"
     timeout = 5
     # Icon de notification
     default_icon = dialog-information
 
 [urgency_normal]
-    background = "#1f1d2e"
+    background = "#2a2740"
     foreground = "#e0def4"
     frame_color = "#c4a7e7"
     highlight = "#c4a7e7"
@@ -336,9 +336,9 @@
     default_icon = dialog-information
 
 [urgency_critical]
-    background = "#1f1d2e"
+    background = "#2a2740"
     foreground = "#e0def4"
-    frame_color = "#c4a7e7"
+    frame_color = "#eb6f92"
     highlight = "#c4a7e7"
     timeout = 0
     default_icon = dialog-warning

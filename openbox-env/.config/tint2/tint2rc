@@ -11,12 +11,12 @@ border_width = 1
 border_sides = B
 border_content_tint_weight = 0
 background_content_tint_weight = 0
-background_color = #191724 100
-border_color = #403d52 100
-background_color_hover = #191724 100
-border_color_hover = #403d52 100
-background_color_pressed = #191724 100
-border_color_pressed = #403d52 100
+background_color = #232136 100
+border_color = #44415d 100
+background_color_hover = #232136 100
+border_color_hover = #44415d 100
+background_color_pressed = #232136 100
+border_color_pressed = #44415d 100
 
 # Background 2: Tâche icônifiée, Tâche par défaut
 rounded = 4
@@ -24,12 +24,12 @@ border_width = 1
 border_sides = TBLR
 border_content_tint_weight = 0
 background_content_tint_weight = 0
-background_color = #1f1d2e 100
-border_color = #26233a 100
-background_color_hover = #26233a 100
-border_color_hover = #403d52 100
-background_color_pressed = #21202e 100
-border_color_pressed = #403d52 100
+background_color = #2a2740 100
+border_color = #393552 100
+background_color_hover = #393552 100
+border_color_hover = #44415d 100
+background_color_pressed = #2a283e 100
+border_color_pressed = #44415d 100
 
 # Background 3: Tâche active
 rounded = 4
@@ -37,11 +37,11 @@ border_width = 1
 border_sides = TBLR
 border_content_tint_weight = 0
 background_content_tint_weight = 0
-background_color = #26233a 100
+background_color = #393552 100
 border_color = #c4a7e7 100
-background_color_hover = #403d52 100
+background_color_hover = #44415d 100
 border_color_hover = #c4a7e7 100
-background_color_pressed = #21202e 100
+background_color_pressed = #2a283e 100
 border_color_pressed = #c4a7e7 100
 
 # Background 4: Tâche urgente
@@ -63,12 +63,12 @@ border_width = 1
 border_sides = TBLR
 border_content_tint_weight = 0
 background_content_tint_weight = 0
-background_color = #26233a 100
-border_color = #403d52 100
-background_color_hover = #26233a 100
-border_color_hover = #403d52 100
-background_color_pressed = #26233a 100
-border_color_pressed = #403d52 100
+background_color = #393552 100
+border_color = #44415d 100
+background_color_hover = #393552 100
+border_color_hover = #44415d 100
+background_color_pressed = #393552 100
+border_color_pressed = #44415d 100
 
 #-------------------------------------
 # Panneau
