@@ -44,7 +44,7 @@
     <primaryMonitor>1</primaryMonitor>
   </placement>
   <theme>
-    <name>Artwiz-boxed</name>
+    <name>rose-pine-moon-gtk</name>
     <titleLayout>NLIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -181,7 +181,10 @@
     <moveButton>Middle</moveButton>
     <!-- 'Left', 'Middle', 'Right' -->
   </dock>
+
+  <!-- ****************** -->
   <!-- Raccourcis clavier -->
+  <!-- ****************** -->
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
     <!-- A = Alt
@@ -296,12 +299,8 @@
     </keybind>
     <!-- Raccourcis clavier pour ouvrir le menu des applications -->
     <keybind key="W-m">
-      <action name="ShowMenu">
-        <menu>root-menu</menu>
-        <position>
-          <x>center</x>
-          <y>center</y>
-        </position>
+      <action name="Execute">
+        <command>jgmenu_run</command>
       </action>
     </keybind>
     <!-- gestionnaire de fichiers 
@@ -318,6 +317,33 @@
     <keybind key="W-P">
       <action name="Execute">
         <command>screengrab</command>
+      </action>
+    </keybind>
+    <!-- Volume -->
+    <keybind key="W-KP_Add">
+      <action name="Execute">
+        <command>wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+</command>
+      </action>
+    </keybind>
+    <keybind key="W-KP_Subtract">
+      <action name="Execute">
+        <command>wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-</command>
+      </action>
+    </keybind>
+    <keybind key="W-t">
+      <action name="Execute">
+        <command>wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle</command>
+      </action>
+    </keybind>
+    <!-- Luminosité -->
+    <keybind key="W-F6">
+      <action name="Execute">
+        <command>brightnessctl set 5%-</command>
+      </action>
+    </keybind>
+    <keybind key="W-F7">
+      <action name="Execute">
+        <command>brightnessctl set 5%+</command>
       </action>
     </keybind>
   </keyboard>
