@@ -59,22 +59,22 @@
     <keepBorder>yes</keepBorder>
     <animateIconify>yes</animateIconify>
     <font place="ActiveWindow">
-      <name>Inter Display SemiBold</name><size>10</size><weight>Normal</weight><slant>Normal</slant>
+      <name>Inter Display SemiBold</name><size>12</size><weight>Normal</weight><slant>Normal</slant>
     </font>
     <font place="InactiveWindow">
-      <name>Inter Display Medium</name><size>10</size><weight>Normal</weight><slant>Normal</slant>
+      <name>Inter Display Medium</name><size>13</size><weight>Normal</weight><slant>Normal</slant>
     </font>
     <font place="MenuHeader">
-      <name>Inter Medium</name><size>10</size><weight>Normal</weight><slant>Normal</slant>
+      <name>Inter Medium</name><size>13</size><weight>Normal</weight><slant>Normal</slant>
     </font>
     <font place="MenuItem">
-      <name>Inter</name><size>10</size><weight>Normal</weight><slant>Normal</slant>
+      <name>Inter</name><size>13</size><weight>Normal</weight><slant>Normal</slant>
     </font>
     <font place="ActiveOnScreenDisplay">
-      <name>Inter Bold</name><size>10</size><weight>Normal</weight><slant>Normal</slant>
+      <name>Inter Bold</name><size>13</size><weight>Normal</weight><slant>Normal</slant>
     </font>
     <font place="InactiveOnScreenDisplay">
-      <name>Inter SemiBold</name><size>10</size><weight>Normal</weight><slant>Normal</slant>
+      <name>Inter SemiBold</name><size>13</size><weight>Normal</weight><slant>Normal</slant>
     </font>
   </theme>
   <desktops>
@@ -623,6 +623,9 @@
       <mousebind button="Right" action="Press">
         <action name="Focus"/>
         <action name="Raise"/>
+        <action name="Execute">
+          <command>jgmenu_run</command>
+        </action>
       </mousebind>
     </context>
     <context name="Root">
@@ -633,8 +636,8 @@
         </action>
       </mousebind>
       <mousebind button="Right" action="Press">
-        <action name="ShowMenu">
-          <menu>root-menu</menu>
+        <action name="Execute">
+          <menu>jgmenu_run</menu>
         </action>
       </mousebind>
     </context>
@@ -666,7 +669,6 @@
        Veillez à ce que les identifiants de menu ne se heurtent pas. -->
     <!-- fichier de menu par défaut (ou fichier personnalisé dans $HOME/.config/openbox/) -->
     <!-- fichiers de menu système sur les systèmes Debian -->
-    <file>/var/lib/openbox/debian-menu.xml</file>
     <file>menu.xml</file>
     <!-- si un appui-maintenu dure plus longtemps que ce réglage (en millisecondes),
        le menu est à nouveau masqué -->

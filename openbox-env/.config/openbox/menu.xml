@@ -1,23 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<openbox_menu>
-  <menu id="root-menu" label="Openbox 3">
-    <item label="Terminal emulator">
-      <action name="Execute"><command>x-terminal-emulator</command></action>
-    </item>
-    <item label="Web browser">
-      <action name="Execute"><command>x-www-browser</command></action>
-    </item>
-    <separator />
-    <item label="Reconfigure">
-      <action name="Reconfigure" />
-    </item>
-    <item label="Restart">
-      <action name="Restart" />
-    </item>
-    <separator />
-    <item label="Exit">
-      <action name="Exit" />
-    </item>
-  </menu>
+<openbox_menu xmlns="http://openbox.org/3.4/menu">
+  <!-- Menu applicatif délégué à jgmenu (clic droit sur le bureau / W-m).
+       Ce fichier est conservé car rc.xml le référence. -->
+  <menu id="root-menu" label="Menu"/>
 </openbox_menu>
-

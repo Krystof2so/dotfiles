@@ -102,7 +102,7 @@ scale_relative_to_screen_height = 0
 #-------------------------------------
 # Taskbar
 #-------------------------------------
-taskbar_name_font = Inter Medium 10
+taskbar_name_font = Inter Medium 12
 taskbar_mode = single_desktop
 taskbar_hide_if_empty = 0
 taskbar_padding = 0 0 2
@@ -125,7 +125,7 @@ task_align = left
 #-------------------------------------
 # Task
 #-------------------------------------
-task_font = Inter 10
+task_font = Inter 12
 task_text = 1
 task_icon = 1
 task_centered = 1
@@ -177,8 +177,8 @@ launcher_item_app = discord.desktop
 #-------------------------------------
 # Horloge
 #-------------------------------------
-time1_font = Inter Bold 10
-time2_font = Inter 9
+time1_font = Inter Bold 12
+time2_font = Inter 11
 time1_format = %H:%M
 time2_format = %A %d %B
 time1_timezone = 
@@ -218,7 +218,7 @@ ac_disconnected_cmd =
 #-------------------------------------
 # Tooltip
 #-------------------------------------
-tooltip_font = Inter 9
+tooltip_font = Inter 11
 tooltip_show_timeout = 0.5
 tooltip_hide_timeout = 0.1
 tooltip_padding = 4 4
