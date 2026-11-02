@@ -5,6 +5,9 @@
 # --- Fond d'écran ---
 feh --bg-max ~/dotfiles/IMG/wallpapers/NB-vallée_Oloron.jpg &
 
+# --- Compositeur X11 --- 
+picom &
+
 # --- Curseur --- 
 xsetroot -cursor_name left_ptr &
 
