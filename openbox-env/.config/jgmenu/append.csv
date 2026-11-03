@@ -3,7 +3,7 @@
 
 ^sep()
 Recharger Openbox,openbox --reconfigure,view-refresh
-Verrouiller,dm-tool lock,system-lock-screen
+Verrouiller,loginctl lock-session,system-lock-screen
 Quitter Openbox,openbox --exit,system-log-out
 Redémarrer,systemctl reboot,system-reboot
 Éteindre,systemctl poweroff,system-shutdown
