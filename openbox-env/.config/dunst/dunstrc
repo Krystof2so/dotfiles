@@ -51,7 +51,7 @@
     progress_bar_max_width = 300
 
     # Arrondi des angles de la barre et choix des angles concernés 
-    progress_bar_corner_radius = 0
+    progress_bar_corner_radius = 4
     progress_bar_corners = all
 
     # Arrondi des angles des icônes
@@ -398,6 +398,13 @@
 #
 # NOTE: It might be helpful to run dunst -print in a terminal in order
 # to find fitting options for rules.
+
+# OSD volume / luminosité : discret, court, hors historique
+[osd]
+    appname = "osd"
+    history_ignore = yes
+    timeout = 2
+    format = "<b>%s</b>"
 
 # Disable the transient hint so that idle_threshold cannot be bypassed from the
 # client

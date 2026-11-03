@@ -326,28 +326,28 @@
     <!-- Volume -->
     <keybind key="W-KP_Add">
       <action name="Execute">
-        <command>wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+</command>
+        <command>sh -c '$HOME/.local/bin/osd.sh volume-up'</command>
       </action>
     </keybind>
     <keybind key="W-KP_Subtract">
       <action name="Execute">
-        <command>wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-</command>
+        <command>sh -c '$HOME/.local/bin/osd.sh volume-down'</command>
       </action>
     </keybind>
     <keybind key="W-t">
       <action name="Execute">
-        <command>wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle</command>
+        <command>sh -c '$HOME/.local/bin/osd.sh volume-mute'</command>
       </action>
     </keybind>
-    <!-- Luminosité -->
-    <keybind key="W-F6">
+    <!-- Luminosité (Fn + F6 / Fn + F7)-->
+    <keybind key="XF86MonBrightnessDown">
       <action name="Execute">
-        <command>brightnessctl -n set 5%-</command>
+        <command>sh -c '$HOME/.local/bin/osd.sh brightness-down'</command>
       </action>
     </keybind>
-    <keybind key="W-F7">
+    <keybind key="XF86MonBrightnessUp">
       <action name="Execute">
-        <command>brightnessctl set 5%+</command>
+        <command>sh -c '$HOME/.local/bin/osd.sh brightness-up'</command>
       </action>
     </keybind>
         <!-- Menu d'alimentation -->
