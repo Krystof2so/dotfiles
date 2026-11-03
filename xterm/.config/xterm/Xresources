@@ -1,6 +1,16 @@
 ! xterm : Rosé Pine Moon, Cascadia Code
 ! Chargé par : xrdb -merge ~/.config/xterm/Xresources
 
+! Session X : curseur et rendu des polices (xrdb)
+Xcursor.theme: BreezeX-RosePine-Linux
+Xcursor.size: 24
+
+Xft.dpi: 96
+Xft.antialias: 1
+Xft.hinting: 1
+Xft.hintstyle: hintmedium
+Xft.rgba: none
+
 ! Police (rendu TrueType via Xft)
 XTerm*renderFont: true
 XTerm*faceName: Cascadia Code
