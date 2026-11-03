@@ -2,28 +2,37 @@
 # Author: Satyajit Sahoo <satyajit.happy@gmail.com>
 # License: GPL-3.0+
 
-# @TODO: finish replacing the colors here
-
+# Quelques modifications par rapport ay fichier d'origine
+# Les couleurs définies dans le fichier d'origine sont commentées
 
 # Menu
-menu.border.color: #f5f5f7
+# menu.border.color: #f5f5f7
+menu.border.color: #c4a7e7
+menu.border.width: 2 
 
 menu.title.bg: Solid Flat
-menu.title.bg.color: #232136
+# menu.title.bg.color: #232136
+menu.title.bg.color: #393552
 menu.title.bg.shadow: 0
-menu.title.text.color: #e0def4
+# menu.title.text.color: #e0def4
+menu.title.text.color: #c4a7e7
 menu.title.text.justify: Center
 
 menu.items.bg: Solid Flat
-menu.items.bg.color: #232136
+# menu.items.bg.color: #232136
+menu.items.bg.color: #2a2740
 menu.items.text.color: #e0def4
-menu.items.disabled.text.color: #b0aec4
+# menu.items.disabled.text.color: #b0aec4
+menu.items.disabled.text.color: #6e6a86
 
 menu.items.active.bg: Solid Flat
-menu.items.active.bg.color: #c4a7e7
+# menu.items.active.bg.color: #c4a7e7
+menu.items.active.bg.color: #44415d
+# menu.items.active.text.color: #e0def4
 menu.items.active.text.color: #e0def4
 
-menu.separator.color: #b0aec4
+# menu.separator.color: #b0aec4
+menu.separator.color: #44415d
 menu.separator.width: 1
 menu.separator.padding.width: 2
 menu.separator.padding.height: 4
@@ -59,7 +68,8 @@ window.active.button.pressed.image.color: #232136
 
 window.active.button.disabled.bg: flat solid
 window.active.button.disabled.bg.color: #232136
-window.active.button.disabled.image.color: #b0aec4
+# window.active.button.disabled.image.color: #b0aec4
+window.active.button.disabled.image.color: #6e6a86
 
 window.active.button.hover.bg: flat solid
 window.active.button.hover.bg.color: #232136
@@ -77,7 +87,8 @@ window.inactive.title.separator.color: #232136
 window.inactive.text.justify: center
 
 window.inactive.label.bg: parentrelative
-window.inactive.label.text.color: #b0aec4
+# window.inactive.label.text.color: #b0aec4
+window.inactive.label.text.color: #908caa
 
 window.inactive.handle.bg: flat solid
 window.inactive.handle.bg.color: #232136
@@ -87,15 +98,18 @@ window.inactive.grip.bg.color: #232136
 
 window.inactive.button.unpressed.bg: flat solid
 window.inactive.button.unpressed.bg.color: #232136
-window.inactive.button.unpressed.image.color: #b0aec4
+# window.inactive.button.unpressed.image.color: #b0aec4
+window.inactive.button.unpressed.image.color: #908caa
 
 window.inactive.button.pressed.bg: flat solid
 window.inactive.button.pressed.bg.color: #c4a7e7
 window.inactive.button.pressed.image.color: #232136
 
 window.inactive.button.disabled.bg: flat solid
-window.inactive.button.disabled.bg.color: #b0aec4
-window.inactive.button.disabled.image.color: #232136
+# window.inactive.button.disabled.bg.color: #b0aec4
+window.inactive.button.disabled.bg.color: #232136
+# window.inactive.button.disabled.image.color: #232136
+window.inactive.button.disabled.image.color: #6e6a86
 
 window.inactive.button.hover.bg: flat solid
 window.inactive.button.hover.bg.color: #232136
@@ -103,16 +117,11 @@ window.inactive.button.hover.image.color: #c4a7e7
 
 
 # OSD
-osd.border.width: 1
 osd.border.color: #c4a7e7
-
-osd.bg: flat solid
-osd.bg.color: #232136
 osd.label.bg: flat solid
 osd.label.bg.color: #232136
 osd.label.text.color: #e0def4
 
-# OSD
 osd.bg: Solid Flat
 osd.bg.color: #232136
 osd.bg.shadow: 0
@@ -132,7 +141,8 @@ osd.button.pressed.bg.color: #c4a7e7
 #osd.button.pressed.*.border.color: #232136
 
 osd.button.focused.bg: flat solid border
-osd.button.focused.bg.color: #f5f5f7
+# osd.button.focused.bg.color: #f5f5f7
+osd.button.focused.bg.color: #44415d
 #osd.button.focused.*.border.color: #2a273f
 
 osd.button.focused.box.color: #c4a7e7
