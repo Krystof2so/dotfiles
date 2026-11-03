@@ -2,27 +2,22 @@
 # Ces commandes sont exécutées au démarrage d'une session X Openbox. #
 ######################################################################
 
-# --- Fond d'écran ---
-feh --bg-max ~/dotfiles/IMG/wallpapers/NB-vallée_Oloron.jpg &
+# Ressources X en premier (synchrone)
+xrdb -merge ~/.config/xterm/Xresources
 
-# --- Compositeur X11 --- 
+# Environnement D-Bus/systemd pour portails et applications
+dbus-update-activation-environment --systemd --all &
+
+# Agent polkit
+lxpolkit &
+
+# Fond d'écran, compositeur, notifications, panneau
+feh --bg-fill ~/dotfiles/IMG/wallpapers/NB-vallée_Oloron.jpg &
 picom &
-
-# --- Curseur --- 
-xsetroot -cursor_name left_ptr &
-
-# --- Notifications --- 
 dunst &
-
-# --- Panneau/Barre des tâches --- 
 tint2 &
 
-# --- Pavé numérique ---
+# Clavier
 numlockx on &
-
-# --- Ressources X (xterm) ---
-xrdb -merge ~/.config/xterm/Xresources &
-
-
-
+xsetroot -cursor_name left_ptr &
 
