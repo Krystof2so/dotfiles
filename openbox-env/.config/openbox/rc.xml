@@ -722,12 +722,18 @@
     <!-- affiche la section de gestion des bureaux dans le menu client-list-(combined-) -->
     <manageDesktops>yes</manageDesktops>
   </menu>
+
+
+  <!-- ***************************************** -->
+  <!-- Régles spécifiques selon les applications -->
+  <!-- ***************************************** -->
   <applications>
     <!--
-  # this is an example with comments through out. use these to make your
-  # own rules, but without the comments of course.
-  # you may use one or more of the name/class/role/title/type rules to specify
-  # windows to match
+  Voici un exemple comportant des commentaires tout au long du code. 
+  Servez-vous-en pour créer vos propres règles, mais sans les commentaires, 
+  bien sûr. Vous pouvez utiliser une ou plusieurs des règles « nom », 
+  « classe », « rôle », « titre » ou « type » pour définir les fenêtres à 
+  prendre en compte.
 
   <application name="the window's _OB_APP_NAME property (see obxprop)"
               class="the window's _OB_APP_CLASS property (see obxprop)"
@@ -736,86 +742,75 @@
                role="the window's _OB_APP_ROLE property (see obxprop)"
               title="the window's _OB_APP_TITLE property (see obxprop)"
                type="the window's _OB_APP_TYPE property (see obxprob)..
-                      (if unspecified, then it is 'dialog' for child windows)">
-  # you may set only one of name/class/role/title/type, or you may use more
-  # than one together to restrict your matches.
+                      (si ce paramètre n'est pas spécifié, la valeur par défaut 
+                      est « dialog » pour les fenêtres enfants)">
+  Vous pouvez définir un seul des critères suivants : nom, classe, rôle, titre 
+  ou type, ou bien en combiner plusieurs pour affiner vos résultats.
 
-  # the name, class, role, and title use simple wildcard matching such as those
-  # used by a shell. you can use * to match any characters and ? to match
-  # any single character.
+  Le nom, la classe, le rôle et le titre utilisent des caractères génériques 
+  simples, similaires à ceux utilisés par un shell. Vous pouvez utiliser * pour 
+  remplacer n'importe quel caractère et ? pour remplacer un seul caractère.
 
-  # the type is one of: normal, dialog, splash, utility, menu, toolbar, dock,
-  #    or desktop
+  Le type peut être l'un des suivants : normal, dialog, splash, utility, menu, 
+  toolbar, dock, ou desktop
 
-  # when multiple rules match a window, they will all be applied, in the
-  # order that they appear in this list
+  Lorsque plusieurs règles correspondent à une fenêtre, elles seront toutes 
+  appliquées, dans l'ordre où elles apparaissent dans cette liste
+
+  Les réglages possibles
+    <desktop>N</desktop> : le bureau d’ouverture (à partir de 1) ; 
+                           all pour tous les bureaux.
+    <position> / <size> : placer ou dimensionner la fenêtre (par exemple centrée).
+    <decor>no</decor> : sans barre de titre ni bordure.
+    <maximized>, <fullscreen>, <iconic>, <shade> : état au démarrage.
+    <layer> : above, normal ou below.
+    <skip_taskbar> / <skip_pager> : masquer la fenêtre du panneau ou du pager.
+    <focus> : donner ou non le focus à l’ouverture.
+
+  Trouver la classe d'une application : 
+        obxprop | grep '^_OB_APP'
+    -->
+
+<!-- DESKTOP 1 -->
+    <!-- wezterm -->
+    <application class="org.wezfurlong.wezterm">
+        <desktop>1</desktop>
+        <focus>yes</focus>
+    </application>
+    <!-- xterm --> 
+    <application name="xterm">
+        <desktop>1</desktop>
+        <size>
+          <width>900</width>
+          <height>560</height>
+        </size>
+        <position>
+          <x>center</x>
+          <y>center</y>
+        </position>
+        <focus>yes</focus>
+    </application>
+
+<!-- DESKTOP 2 -->
+    <!-- Firefox -->
+    <application class="firefox">
+        <desktop>2</desktop>
+        <focus>yes</focus>
+    </application>
 
 
-    # each rule element can be left out or set to 'default' to specify to not 
-    # change that attribute of the window
+<!-- DESKTOP 3 -->
+    <!-- Obsidian -->
+    <application class="obsidian">
+        <desktop>3</desktop>
+        <focus>yes</focus>
+    </application>
 
-    <decor>yes</decor>
-    # enable or disable window decorations
-
-    <shade>no</shade>
-    # make the window shaded when it appears, or not
-
-    <position force="no">
-      # the position is only used if both an x and y coordinate are provided
-      # (and not set to 'default')
-      # when force is "yes", then the window will be placed here even if it
-      # says you want it placed elsewhere.  this is to override buggy
-      # applications who refuse to behave
-      <x>center</x>
-      # a number like 50, or 'center' to center on screen. use a negative number
-      # to start from the right (or bottom for <y>), ie -50 is 50 pixels from
-      # the right edge (or bottom). use 'default' to specify using value
-      # provided by the application, or chosen by openbox, instead.
-      <y>200</y>
-      <monitor>1</monitor>
-      # specifies the monitor in a xinerama setup.
-      # 1 is the first head, or 'mouse' for wherever the mouse is
-    </position>
-
-    <size>
-      # the size to make the window.
-      <width>20</width>
-      # a number like 20, or 'default' to use the size given by the application.
-      # you can use fractions such as 1/2 or percentages such as 75% in which
-      # case the value is relative to the size of the monitor that the window
-      # appears on.
-      <height>30%</height>
-    </size>
-
-    <focus>yes</focus>
-    # if the window should try be given focus when it appears. if this is set
-    # to yes it doesn't guarantee the window will be given focus. some
-    # restrictions may apply, but Openbox will try to
-
-    <desktop>1</desktop>
-    # 1 is the first desktop, 'all' for all desktops
-
-    <layer>normal</layer>
-    # 'above', 'normal', or 'below'
-
-    <iconic>no</iconic>
-    # make the window iconified when it appears, or not
-
-    <skip_pager>no</skip_pager>
-    # asks to not be shown in pagers
-
-    <skip_taskbar>no</skip_taskbar>
-    # asks to not be shown in taskbars. window cycling actions will also
-    # skip past such windows
-
-    <fullscreen>yes</fullscreen>
-    # make the window in fullscreen mode when it appears
-
-    <maximized>true</maximized>
-    # 'Horizontal', 'Vertical' or boolean (yes/no)
-  </application>
-
-  # end of the example
--->
+<!-- DESKTOP 4 -->
+    <!-- Discord -->
+    <application class="discord">
+        <desktop>4</desktop>
+        <focus>yes</focus>
+    </application>
   </applications>
 </openbox_config>
