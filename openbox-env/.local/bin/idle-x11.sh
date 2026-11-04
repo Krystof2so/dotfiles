@@ -11,7 +11,7 @@ xset +dpms
 xset dpms 0 0 0
 
 # Verrouilleur : répond à « loginctl lock-session » et à la mise en veille
-xss-lock --transfer-sleep-lock -- "$HOME/.local/bin/lock.sh" &
+xss-lock --transfer-sleep-lock -- "$HOME/.local/bin/lock-x11.sh" &
 
 # Les délais s'additionnent : 15 min, puis +10 min, puis +20 min (= 45 min)
 exec "$HOME/.cargo/bin/xidlehook" \

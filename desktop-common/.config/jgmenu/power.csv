@@ -1,4 +1,4 @@
 Verrouiller,loginctl lock-session,system-lock-screen
-Quitter Openbox,openbox --exit,system-log-out
+Quitter la session,sh -c '$HOME/.local/bin/wm-ctl quit',system-log-out
 Redémarrer,systemctl reboot,system-reboot
 Éteindre,systemctl poweroff,system-shutdown

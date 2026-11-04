@@ -22,4 +22,4 @@ numlockx on &
 xsetroot -cursor_name left_ptr &
 
 # --- Inactivité : verrouillage, extinction écran, veille ---
-"$HOME/.local/bin/idle.sh" &
+"$HOME/.local/bin/idle-x11.sh" &
