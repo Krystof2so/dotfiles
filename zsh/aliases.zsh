@@ -26,7 +26,6 @@ alias gcm='git commit'
 alias gdf='git diff'
 alias glog='git log'
 alias gst='git status'
-alias lazyg='lazygit'
 
 ## Zinit
 alias zinitup='zinit_update'
