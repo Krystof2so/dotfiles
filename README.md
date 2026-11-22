@@ -2,7 +2,7 @@
 
 Mes fichiers de configuration personnels, pour un environnement de développement en ligne de commande sous **Debian** :
 
-- **[Zsh](https://www.zsh.org/)** modulaire (prompt, alias, plugins [Zinit](https://github.com/zdharma-continuum/zinit), mises à jour hebdomadaires des outils) ;
+- **[Zsh](https://www.zsh.org/)** modulaire (prompt, alias, plugins [Zimfw](https://github.com/zimfw/zimfw), mises à jour hebdomadaires des outils) ;
 - **[WezTerm](https://wezterm.org/)** comme terminal, configuré en Lua ;
 - **[Git](https://git-scm.com/)** avec **[delta](https://github.com/dandavison/delta)** pour les diffs et **[Lazygit](https://github.com/jesseduffield/lazygit)** comme interface ;
 - **[eza](https://github.com/eza-community/eza)** comme remplaçant de `ls`, avec thèmes ;
@@ -21,13 +21,14 @@ Ces réglages sont pensés pour fonctionner avec ma configuration de [Neovim](ht
 ├── zshrc                        # Point d'entrée de Zsh (lié à ~/.zshrc)
 ├── gitconfig                    # Configuration Git globale (lié à ~/.gitconfig)
 ├── zsh/
+│   ├── zimrc
 │   ├── utils.zsh                # Fonctions utilitaires (needs_global_update, path_prepend, is_installed)
 │   ├── env.zsh                  # Options Zsh, locale, PATH, historique, pager
 │   ├── plugins.zsh              # Zinit, plugins et complétions
 │   ├── prompt.zsh               # Prompt personnalisé (date, heure, venv, état Git)
 │   ├── aliases.zsh              # Alias et fonctions
 │   └── tools/                   # Mises à jour automatiques (hebdomadaires)
-│       ├── zinit.zsh
+│       ├── zimfw.zsh
 │       ├── rust.zsh
 │       └── python.zsh
 ├── wezterm/
@@ -63,7 +64,7 @@ Ces réglages sont pensés pour fonctionner avec ma configuration de [Neovim](ht
 | 1   | `zsh/utils.zsh`   | Fonctions utilitaires, à charger en premier      |
 | 2   | `fpath+=~/.zfunc` | Dossier de complétions personnelles              |
 | 3   | `zsh/env.zsh`     | Environnement de base                            |
-| 4   | `zsh/plugins.zsh` | Zinit, plugins, complétions                      |
+| 4   | `zsh/plugins.zsh` | Zimfw, plugins, complétions                      |
 | 5   | `zsh/prompt.zsh`  | Prompt                                           |
 | 6   | `zsh/aliases.zsh` | Alias et fonctions                               |
 | 7   | `zsh/tools/*.zsh` | Mises à jour des outils, si le délai est dépassé |
@@ -85,15 +86,13 @@ Ces réglages sont pensés pour fonctionner avec ma configuration de [Neovim](ht
 
 ### Plugins (`plugins.zsh`)
 
-Zinit est installé automatiquement au premier lancement s'il est absent. Plugins chargés :
+Zimfw est installé automatiquement au premier lancement s'il est absent. Plugins chargés :
 
 | Plugin                              | Rôle                                          |
 | ----------------------------------- | --------------------------------------------- |
 | `zsh-users/zsh-completions`         | Complétions supplémentaires                   |
 | `zsh-users/zsh-autosuggestions`     | Suggestions à partir de l'historique          |
 | `zsh-users/zsh-syntax-highlighting` | Coloration syntaxique de la ligne de commande |
-
-S'y ajoutent quatre annexes Zinit (`as-monitor`, `bin-gem-node`, `patch-dl`, `rust`) et les complétions de `uv` et `uvx`, générées au démarrage.
 
 ### Prompt (`prompt.zsh`)
 
@@ -110,13 +109,13 @@ Une fois par semaine, au démarrage d'un shell interactif, `zshrc` exécute :
 
 | Script       | Action                                         |
 | ------------ | ---------------------------------------------- |
-| `zinit.zsh`  | `zinit self-update` puis `zinit update --all`  |
+| `zimfw.zsh`  | `zimfw update`                                 |
 | `rust.zsh`   | `rustup self update` puis `rustup update`      |
 | `python.zsh` | `git pull` de `~/.pyenv` puis `uv self update` |
 
-Le `timestamp` de la dernière exécution est enregistré dans `~/.zinit-auto-update`.
+Le `timestamp` de la dernière exécution est enregistré dans `~/.dotfiles-auto-update`.
 
-Pour forcer une mise à jour avant la fin du délai supprimer `~/.zinit-auto-update`, puis `source zshrc`
+Pour forcer une mise à jour avant la fin du délai supprimer `~/.dotfiles-auto-update`, puis `source zshrc`
 
 ---
 
@@ -153,7 +152,7 @@ Définis dans `zsh/aliases.zsh`.
 | `apti`     | `sudo aptitude`                                                                                                   |
 | `cleanapt` | `sudo aptitude autoclean`                                                                                         |
 | `aptiup`   | Met à jour la liste des paquets, puis ouvre `aptitude` seulement s'il y a des mises à jour ou de nouveaux paquets |
-| `zinitup`  | Met à jour Zinit et ses plugins à la demande                                                                      |
+| `zimup`    | Met à jour Zimfw et ses plugins à la demande                                                                      |
 | `adios`    | `systemctl poweroff`                                                                                              |
 | `reboot`   | `systemctl reboot`                                                                                                |
 
@@ -229,7 +228,7 @@ Le thème [Rosé Pine](https://github.com/neapsix/wezterm) est chargé comme plu
 
 | Catégorie                 | Outils                                                            |
 | ------------------------- | ----------------------------------------------------------------- |
-| Shell                     | `zsh`, `git` (Zinit s'installe tout seul)                         |
+| Shell                     | `zsh`, `git`, `zimfw`                                             |
 | Terminal                  | `wezterm`, police **FiraCode Nerd Font Mono**                     |
 | Éditeur                   | `neovim`                                                          |
 | Outils CLI                | `eza`, `bat`, `fd-find`, `ripgrep`, `delta`, `lazygit`            |
@@ -288,7 +287,7 @@ export EZA_CONFIG_DIR="$HOME/dotfiles/eza"
 ezadark   # ou ezalight
 ```
 
-Puis ouvrir un nouveau shell : Zinit et les plugins s'installent au premier lancement.
+Puis ouvrir un nouveau shell : Zimfw et les plugins s'installent au premier lancement.
 
 ---
 

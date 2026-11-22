@@ -1,37 +1,29 @@
 ###################################
-# GESTION DES PLUGINS ZSH (ZINIT) #
+# GESTION DES PLUGINS ZSH (ZIMFW) #
 ###################################
 
-# --- Installation et chargement de Zinit --- #
-if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
-  print -P "%F{33} %F{220}Installation de Zinit...%f"
-  mkdir -p "$HOME/.local/share/zinit"
-  git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git"
+ZIM_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/zim"
+ZIM_CONFIG_FILE="$HOME/dotfiles/zsh/zimrc"
+
+# Script zimfw : paquet Debian si présent, sinon téléchargement via 'curl'
+if [[ -r /usr/share/zimfw/zimfw.zsh ]]; then
+  ZIMFW_SCRIPT=/usr/share/zimfw/zimfw.zsh
+else
+  ZIMFW_SCRIPT=${ZIM_HOME}/zimfw.zsh
+  [[ -e ${ZIMFW_SCRIPT} ]] || curl -fsSL --create-dirs -o ${ZIMFW_SCRIPT} \
+    https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
 fi
 
-source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
-autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
+if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZIM_CONFIG_FILE} ]]; then
+  source ${ZIMFW_SCRIPT} init -q
+fi
 
-# --- Annexes Zinit --- #
-zinit light-mode for \
-  zdharma-continuum/zinit-annex-as-monitor \
-  zdharma-continuum/zinit-annex-bin-gem-node \
-  zdharma-continuum/zinit-annex-patch-dl \
-  zdharma-continuum/zinit-annex-rust
-
-# --- Plugins Zsh --- #
-zinit ice blockf atpull'zinit creinstall -q .'
-zinit light zsh-users/zsh-completions
-autoload -Uz compinit && compinit
-zinit light zsh-users/zsh-autosuggestions
-zinit light zsh-users/zsh-syntax-highlighting
-
-# --- Complétions d'outils externes (après compinit) --- #
-eval "$(uv generate-shell-completion zsh)"
-eval "$(uvx --generate-shell-completion zsh)"
-
-# --- Configuration des plugins --- #
+# Réglages des plugins (avant le chargement)
+ZSH_AUTOSUGGEST_MANUAL_REBIND=1
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#8c8c8c'
-ZSH_HIGHLIGHT_STYLES[path]='fg=#ebcb8b'
 
+# Initialise les modules
+source ${ZIM_HOME}/init.zsh
+
+# À définir APRÈS le chargement : le tableau est créé par le plugin
+ZSH_HIGHLIGHT_STYLES[path]='fg=#ebcb8b'

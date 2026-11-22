@@ -26,10 +26,10 @@ source "$HOME/dotfiles/zsh/aliases.zsh"
 # --- 7. Outils (chargement conditionnel si mise à jour nécessaire) ---
 if needs_global_update; then
   echo "🔄 Mise à jour automatique de tous les outils..."
-  source "$HOME/dotfiles/zsh/tools/zinit.zsh"
+  source "$HOME/dotfiles/zsh/tools/zimfw.zsh"
   source "$HOME/dotfiles/zsh/tools/rust.zsh"
   source "$HOME/dotfiles/zsh/tools/python.zsh"
-  date +%s >| "$HOME/.zinit-auto-update"  # Met à jour le fichier central
+  date +%s >| "$HOME/.dotfiles-auto-update"  # Met à jour le fichier central
   echo "\n ✅ Toutes les mises à jour sont terminées."
 fi
 

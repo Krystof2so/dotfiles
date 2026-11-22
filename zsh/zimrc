@@ -1,0 +1,9 @@
+# --- Complétion ---
+# Définitions de complétion supplémentaires
+zmodule zsh-users/zsh-completions --fpath src
+# Appelle compinit : doit venir APRÈS tous les modules qui ajoutent des complétions
+zmodule completion
+
+# --- À initialiser en dernier ---
+zmodule zsh-users/zsh-syntax-highlighting
+zmodule zsh-users/zsh-autosuggestions
