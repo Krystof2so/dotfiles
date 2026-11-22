@@ -27,8 +27,8 @@ alias gdf='git diff'
 alias glog='git log'
 alias gst='git status'
 
-## Zinit
-alias zinitup='zinit_update'
+## Zimfw
+alias zimup='zimfw update'
 
 ## Aptitude
 alias apti='sudo aptitude'
