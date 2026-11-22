@@ -1,0 +1,269 @@
+<?xml version="1.0" ?>
+
+<labwc_config>
+
+    <!-- 
+    ****************************************************** 
+    <core />
+    Utilise la configuration par défaut livrée avec labwc 
+    ******************************************************
+    --> 
+
+    <!-- 
+    ***********************
+    Placement des fenêtres 
+    ***********************
+    -->
+    <placement>
+        <policy>cascade</policy>
+        <cascadeOffset x="40" y="30" />
+    </placement>
+
+    <!--
+    **********************
+    Sélecteur de fenêtres
+    **********************
+    -->
+    <windowSwitcher preview="yes" outlines="yes" order="age">
+        <osd show="yes" style="thumbnail" />
+    </windowSwitcher>
+    
+    <!-- 
+    **************************
+    Résistance et aimantation
+    ************************** 
+    -->
+    <resistance> 
+	    <screenEdgeStrength>-20</screenEdgeStrength>
+	    <windowEdgeStrength>-20</windowEdgeStrength>
+	    <unSnapThreshold>20</unSnapThreshold> 
+	    <unMaximizeThreshold>150</unMaximizeThreshold> 
+    </resistance>
+
+    <!-- 
+    ******
+    Focus 
+    ******
+    -->
+    <focus>
+        <followMouse>no</followMouse>
+    </focus>
+
+    <!-- 
+    ******************
+    Thème : Rosé Pine 
+    ******************
+    -->
+    <theme>
+        <name>rose-pine-moon-gtk</name>
+        <titlebar>
+            <layout>icon,title:iconify,max,close</layout>
+        </titlebar>
+        <keepBorder>yes</keepBorder>
+        <font place="ActiveWindow" name="Inter Display SemiBold" size="14" weight="normal" slant="normal" />
+        <font place="InactiveWindow" name="Inter Display Medium" size="14" weight="normal" slant="normal" />
+        <font place="MenuHeader" name="Inter Medium" size="13" weight="normal" slant="normal" />
+        <font place="MenuItem" name="Inter" size="13" weight="normal" slant="normal" />
+        <font place="OnScreenDisplay" name="Inter Bold" size="13" weight="normal" slant="normal" />
+    </theme>
+
+    <!-- 
+    ************
+    Les bureaux 
+    ************
+    -->
+    <desktops>
+	    <names>
+		    <name>Terminal</name>
+		    <name>Internet</name>
+		    <name>Bureautique</name>
+		    <name>Divers</name>
+	    </names>
+	    <popupTime>0</popupTime>
+    </desktops>
+
+    <!-- 
+    *******
+    Marges 
+    *******
+    -->
+    <margin top="" bottom="" left="" right="" />
+
+    <!--
+    **********************************************
+    Définition des régions de l'écran (grille 4x4)
+    Pour simuler le tilling
+    **********************************************
+    -->
+    <regions>
+        <region name="haut-gauche" x="0%"  y="0%"  width="50%" height="50%" />
+        <region name="haut-droite" x="50%" y="0%"  width="50%" height="50%" />
+        <region name="bas-gauche"  x="0%"  y="50%" width="50%" height="50%" />
+        <region name="bas-droite"  x="50%" y="50%" width="50%" height="50%" />
+    </regions>
+
+    <!-- 
+    *******************
+    Raccourcis clavier 
+    *******************
+    A = Alt, C = Ctrl, S = Shift, W = Super
+    -->
+	<keyboard>
+    <numlock>on</numlock>
+	<default />
+
+        <!-- Désactive/active les raccourcis claviers (donne la main aux VM, par exemple) -->
+        <keybind key="W-S-F12">
+            <action name="ToggleKeybinds" />
+        </keybind>
+    
+        <!-- Pour se déplacer d'un bureau à l'autre -->
+        <keybind key="C-A-Left">
+            <action name="GoToDesktop" to="left" wrap="no" />
+        </keybind>
+        <keybind key="C-A-Right">
+            <action name="GoToDesktop" to="right" wrap="no" />
+        </keybind>
+        <keybind key="W-F1">
+            <action name="GoToDesktop" to="1" />
+        </keybind>
+        <keybind key="W-F2">
+            <action name="GoToDesktop" to="2" />
+        </keybind>
+        <keybind key="W-F3">
+            <action name="GoToDesktop" to="3" />
+        </keybind>
+        <keybind key="W-F4">
+            <action name="GoToDesktop" to="4" />
+        </keybind>
+
+        <!-- Affichage du bureau (masque les fenêtres) -->
+        <keybind key="W-d">
+            <action name="ToggleShowDesktop" />
+        </keybind>
+        
+        <!-- Déplacer une fenêtre d'un bureau à l'autre -->
+        <keybind key="C-S-A-Left">
+            <action name="SendToDesktop" to="left" wrap="no" />
+        </keybind>
+        <keybind key="C-S-A-Right">
+            <action name="SendToDesktop" to="right" wrap="no" />
+        </keybind>
+
+        <!-- Actions sur les fenêtres -->       
+        <keybind key="A-F4">
+            <action name="If">
+                <query identifier="discord" />
+                <then><action name="Kill" /></then>
+                <else><action name="Close" /></else>
+            </action>
+        </keybind>
+        <keybind key="A-space">
+            <action name="ShowMenu" menu="client-menu" />
+        </keybind>
+        <keybind key="A-F12">
+            <action name="ToggleFullscreen" />
+        </keybind>
+
+        <!-- Déplacement entre les fenêtres -->
+        <keybind key="A-Tab">
+            <action name="NextWindow" />
+        </keybind>
+        <keybind key="A-S-Tab">
+            <action name="PreviousWindow" />
+        </keybind>
+
+        <!-- Tiling manuel -->
+        <keybind key="W-A-Left">
+            <action name="SnapToEdge" direction="left" />
+        </keybind>
+        <keybind key="W-A-Right">
+            <action name="SnapToEdge" direction="right" />
+        </keybind>
+        <keybind key="W-A-Up">
+            <action name="ToggleMaximize" />
+        </keybind>
+        <keybind key="W-A-Down">
+            <action name="UnMaximize" />
+        </keybind>
+
+        <!-- Tiling manuel à l'aide des régions (cf. <regions>) -->
+        <keybind key="W-A-KP_7"><action name="SnapToRegion" region="haut-gauche" /></keybind>
+        <keybind key="W-A-KP_9"><action name="SnapToRegion" region="haut-droite" /></keybind>
+        <keybind key="W-A-KP_1"><action name="SnapToRegion" region="bas-gauche" /></keybind>
+        <keybind key="W-A-KP_3"><action name="SnapToRegion" region="bas-droite" /></keybind>
+        <!-- Si pavé numérique non activé -->
+        <keybind key="W-A-KP_Home"><action name="SnapToRegion" region="haut-gauche" /></keybind>
+        <keybind key="W-A-KP_Prior"><action name="SnapToRegion" region="haut-droite" /></keybind>
+        <keybind key="W-A-KP_End"><action name="SnapToRegion" region="bas-gauche" /></keybind>
+        <keybind key="W-A-KP_Next"><action name="SnapToRegion" region="bas-droite" /></keybind>
+
+        <!-- Lanceurs -->
+        <keybind key="W-m">
+            <action name="ShowMenu" menu="root-menu">
+                <atCursor>no</atCursor>
+                <position>
+                    <x>800</x>
+                    <y>350</y>
+                </position>
+            </action>
+        </keybind>
+	    <keybind key="W-Return"> 
+		    <action name="Execute" command="foot" />
+        </keybind> 
+        <keybind key="W-p">
+            <action name="Execute" command="screengrab" />
+        </keybind>
+    
+    </keyboard>
+
+    <!-- 
+    ******************
+    Règles de fenêtre 
+    ******************
+    -->
+    <windowRules>
+
+        <!-- WezTerm du démarrage : bureau 1, plein écran, sans décoration -->
+        <windowRule identifier="wezterm-main" serverDecoration="no">
+            <action name="SendToDesktop" to="1" follow="no" />
+            <action name="ToggleFullscreen" />
+        </windowRule>
+
+        <!-- Bureau 4 : Discord et KeePassXC -->
+        <windowRule identifier="discord">
+            <action name="SendToDesktop" to="4" follow="no" />
+            <action name="Focus" />
+        </windowRule>
+        <windowRule identifier="*keepassxc*">
+            <action name="SendToDesktop" to="4" follow="no" />
+            <action name="SnapToEdge" direction="left" />
+            <action name="Focus" />
+
+        </windowRule>
+
+        <!-- Bureau 2 : Firefox -->
+        <windowRule identifier="*firefox*">
+            <action name="SendToDesktop" to="2" follow="no" />
+            <action name="Focus" />
+        </windowRule>
+
+        <!-- Bureau 3 : Obsidian -->
+        <windowRule identifier="obsidian">
+            <action name="SendToDesktop" to="3" follow="no" />
+            <action name="Focus" />
+        </windowRule>
+
+        <!-- foot et WezTerm (hors démarrage) : coin bas droit, 1/3 x 1/4, sans décoration -->
+        <windowRule identifier="foot" serverDecoration="no">
+            <action name="SnapToRegion" region="bas-droite" />
+            <action name="Focus" />
+        </windowRule>
+        <windowRule identifier="org.wezfurlong.wezterm" serverDecoration="no">
+            <action name="SnapToRegion" region="bas-droite" />
+            <action name="Focus" />
+        </windowRule>
+
+    </windowRules>
+    
+</labwc_config>

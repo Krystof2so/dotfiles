@@ -812,5 +812,10 @@
         <desktop>4</desktop>
         <focus>yes</focus>
     </application>
+    <!-- KeePassXC -->
+    <application class="KeePassXC">
+        <desktop>4</desktop>
+        <focus>yes</focus>
+    </application>
   </applications>
 </openbox_config>

@@ -1,0 +1,7 @@
+
+# Disposition pour clavier français
+XKB_DEFAULT_LAYOUT=fr
+
+# Thème de curseur :
+XCURSOR_THEME=BreezeX-RosePine-Linux
+XCURSOR_SIZE=24

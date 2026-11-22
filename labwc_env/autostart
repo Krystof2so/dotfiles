@@ -1,0 +1,10 @@
+##################################################################
+# Ces commandes sont exécutées au démarrage d'une session labwc. #
+##################################################################
+
+# Chargement du fond d'écran
+swaybg -i ~/dotfiles/IMG/wallpapers/NB-vallée_Oloron.jpg &
+
+# Chargement de wezterm au démarrage (avec 'main' comme nom de classe)
+# Lance automatiquement la commande 'aptiup' définie au niveau de 'zsh'
+wezterm start --class wezterm-main -- zsh -ic 'aptiup; exec zsh' &
